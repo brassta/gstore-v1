@@ -7,6 +7,7 @@ import competition from './competition/reducer';
 import dashboard from './dashboard/reducer';
 import profile from './profile/reducer';
 import doGood from './do-good/reducer';
+import gnStore from './gn-store/reducer';
 
 export default combineReducers<CombinedState>({
   ui,
@@ -15,4 +16,5 @@ export default combineReducers<CombinedState>({
   dashboard,
   profile,
   doGood,
+  gnStore
 });

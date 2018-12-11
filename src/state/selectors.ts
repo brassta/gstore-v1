@@ -6,6 +6,8 @@ import * as fromCompetition from './competition/selectors';
 import * as fromDashboard from './dashboard/selectors';
 import * as fromProfile from './profile/selectors';
 import * as fromDoGood from './do-good/selectors';
+import * as fromGnStore from './gn-store/selectors';
+
 
 // ui
 export const isNavigationSidebarOpen = ({ ui }: State) =>
@@ -21,6 +23,11 @@ export const isGoldBalanceInProgress = ({ balance }: State) =>
   fromBalance.isGoldBalanceInProgress(balance);
 export const getGoldAccountId = ({ balance }: State) =>
   fromBalance.getGoldAccountId(balance);
+
+//gnstore
+export const getCurrentProductMap = ({product}:State) =>{
+    fromGnStore.GetCurrentProductMap(product);
+}
 
 // competition
 export const getCurrentCompetitionsMap = ({ competition }: State) =>

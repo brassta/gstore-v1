@@ -4,6 +4,7 @@ import { State as CompetitionState } from './competition/state';
 import { State as DashboardState } from './dashboard/state';
 import { State as ProfileState } from './profile/state';
 import { State as DoGoodState } from './do-good/state';
+import { State as GNStoreState } from './gn-store/state';
 
 export interface State {
   ui: UIState;
@@ -12,4 +13,5 @@ export interface State {
   dashboard: DashboardState;
   profile: ProfileState;
   doGood: DoGoodState;
+  product: GNStoreState;
 }

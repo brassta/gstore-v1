@@ -10,7 +10,7 @@ import {
 } from 'date-fns';
 
 import angryBirdsImage from '@images/mocks/angry-birds.png';
-import { Competition, Ranking, Prize } from 'src/types';
+import { Competition, Ranking, Prize, Product } from 'src/types';
 
 import { GAME_URL, currencyMap } from 'src/constants';
 
@@ -29,6 +29,11 @@ interface CompetitionResponse {
   feeCurrency: string;
   featured: boolean;
   prizes: Prize[];
+}
+
+interface ProductResponse {
+  name?:string,
+  id?:string
 }
 
 const parseTimeUntil = (date: string): string => {
@@ -121,6 +126,13 @@ export const mapResponseToCompetition = (
     featured: competition.featured,
   };
 };
+
+export const mapResponseToProduct = (product:ProductResponse):Product =>{
+  return{
+    id:product.id,
+    name:product.name
+  }
+}
 
 interface RankingResponse {
   gnationId: string;

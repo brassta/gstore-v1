@@ -1,0 +1,197 @@
+$pill-height: rhythm(1.5) !default;
+$pill-margin: rhythm(.25) 0 !default;
+$pill-padding: .25 12px .25 12px !default;
+$pill-spacing: 12px !default;
+$pill-font-size: map-get($font-sizes, 'small') !default;
+$pill-font-weight: 500 !default;
+$pill-transition: all .15s ease-in-out 0s !default;
+$pill-text-color: map-get($text-colors, 'pill') !default;
+$pill-background-color: rgba(map-get($background-colors, 'pill'), .1) !default;
+$pill-border: (
+  side: all,
+  width: $default-rhythm-border-width,
+  color: map-get($border-colors, 'pill'),
+  radius: $base-line-height
+) !default;
+
+$pill-hover-shadow: 0 0 5px 2px rgba(map-get($pill-border, color), .5) !default;
+
+$pill-active-color: map-get($text-colors, 'warning') !default;
+$pill-active-background: rgba(map-get($background-colors, 'warning'), .1) !default;
+$pill-active-border-color: map-get($border-colors, 'warning') !default;
+$pill-active-shadow: 0 0 5px 2px rgba(map-get($background-colors, warning), .5) !default;
+
+
+@mixin coloured-pill($type: null) {
+  $text-color: $pill-text-color;
+  $background-color: $pill-background-color;
+  $border-color: map-get($pill-border, color);
+  $box-shadow: $pill-hover-shadow;
+
+  @if $type == 'active' {
+    $text-color: $pill-active-color;
+    $background-color: $pill-active-background;
+    $border-color: $pill-active-border-color;
+    $box-shadow: $pill-active-shadow;
+  }
+
+  color: $text-color;
+  background: $background-color;
+  border-color: $border-color;
+
+  &:hover {
+    &:not([disabled]),
+    &:not([aria-disabled='true']) {
+      color: tint($text-color, 20%);
+      background-color: rgba($border-color, .2);
+      border-color: tint($border-color, 20%);
+      box-shadow: $box-shadow;
+    }
+  }
+
+  &:active,
+  &[aria-pressed='true'] {
+    &:not([disabled]),
+    &:not([aria-disabled='true']) {
+      color: tint($text-color, 20%);
+      background-color: rgba($border-color, .2);
+      border-color: tint($border-color, 20%);
+      box-shadow: $box-shadow;
+    }
+  }
+
+  &[disabled] {
+    color: $pill-text-color;
+    background: transparent;
+    border-color: map-get($pill-border, color);
+  }
+
+  &.#{$namespace}-pill--flat {
+    &:hover,
+    &:active,
+    &[aria-pressed='true'] {
+      &:not([disabled]),
+      &:not([aria-disabled='true']) {
+        color: tint($text-color, 20%);
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
+
+        svg {
+          filter: drop-shadow(0 0 2px rgba($border-color, .5));
+        }
+      }
+    }
+
+    &:active,
+    &[aria-pressed='true'] {
+      &:not([disabled]),
+      &:not([aria-disabled='true']) {
+        color: tint($text-color, 20%);
+        background-color: rgba($border-color, .2);
+        border-width: map-get($pill-border, width);
+        border-color: tint($border-color, 20%);
+        box-shadow: $pill-hover-shadow;
+      }
+    }
+  }
+}
+
+
+.#{$namespace}-pill {
+  @include set-border($pill-border, $pill-padding);
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: $pill-height;
+  margin: $pill-margin;
+
+  font-size: $pill-font-size;
+  font-weight: $pill-font-weight;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    z-index: 1;
+    text-decoration: none;
+
+    &:not([disabled]),
+    &:not([aria-disabled='true']) {
+      transition: $pill-transition;
+    }
+  }
+
+  & + .#{$namespace}-pill {
+    margin-left: $pill-spacing;
+  }
+
+  & + .#{$namespace}-pill--flat {
+    margin-left: $pill-spacing / 2;
+  }
+
+  @include coloured-pill;
+}
+
+
+/// Button with only icon
+
+.#{$namespace}-pill--icon {
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  width: $pill-height;
+  height: $pill-height;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-indent: -9999px;
+
+  .#{$namespace}-icon {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    text-align: center;
+    background-color: transparent;
+  }
+
+  .#{$namespace}-icon:only-child {
+    margin: 0;
+  }
+}
+
+
+.#{$namespace}-pill--active {
+  @include coloured-pill('active');
+}
+
+
+.#{$namespace}-pill--flat {
+  border-width: 0;
+  background-color: transparent;
+
+  & + .#{$namespace}-pill {
+    margin-left: $pill-spacing / 2;
+  }
+
+  & + .#{$namespace}-pill--flat {
+    margin-left: 0;
+  }
+
+  &[aria-pressed='true'] {
+    box-shadow: $pill-active-shadow;
+  }
+}
+

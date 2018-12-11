@@ -1,0 +1,69 @@
+$toolbar-margin: 0 !default;
+$toolbar-padding: rhythm(.25) 0 rhythm(.25) 0 !default;
+$toolbar-border: (
+  side: top,
+  width: $default-rhythm-border-width,
+  style: $default-rhythm-border-style,
+  color: map-get($border-colors, normal)
+) !default;
+
+
+.#{$namespace}-toolbar {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: $toolbar-margin;
+  padding: $toolbar-padding;
+
+  & + .#{$namespace}-toolbar {
+    @include set-border($toolbar-border, $toolbar-padding);
+  }
+
+  > .#{$namespace}-pagination {
+    flex: 1 1 auto;
+  }
+}
+
+
+.#{$namespace}-toolbar__actions,
+.#{$namespace}-toolbar__actions--primary,
+.#{$namespace}-toolbar__actions--secondary {
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  > div,
+  > span,
+  > label,
+  > input,
+  > button,
+  > select,
+  > .#{$namespace}-pill {
+    margin-left: 4px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  > div + div,
+  > span + span,
+  > label + label,
+  > .#{$namespace}-buttons {
+    margin-left: 8px;
+  }
+}
+
+
+.#{$namespace}-toolbar__actions--primary {
+  flex: 1 1 auto;
+}
+
+
+.#{$namespace}-toolbar__actions--secondary {
+  flex: 0 0 auto;
+}

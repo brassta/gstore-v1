@@ -1,0 +1,232 @@
+$competition-header-width: 990px;
+
+
+.#{$namespace}-competition-header {
+  position: relative;
+  height: rhythm(13);
+  padding: rhythm(1);
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 auto;
+
+
+  &__image {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-position: center center;
+    background-size: cover;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle, rgba(17,16,32,0) 0%, rgba(17,16,32,0.9) 100%), linear-gradient(180deg, rgba(35,32,60,0) 0%, #111020 100%);
+    }
+  }
+
+
+  &__content {
+    position: relative;
+    width: $competition-header-width;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+
+    &__description {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      z-index: 1;
+    }
+
+
+    &__controls {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      align-self: flex-end;
+
+      //> button {
+      //  width: 180px;
+      //  margin: 0 rhythm(0.5);
+      //}
+    }
+
+
+  &__label {
+    margin: 0 1ex 0 0;
+    text-shadow: 0 0 2px black;
+
+    &:nth-of-type(1) {
+      width: 100%;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: color('gray');
+    }
+  }
+
+
+  &__text {
+    margin: 0 1ex 0 0;
+    font-weight: 600;
+
+    &:nth-of-type(1) {
+      width: 100%;
+      line-height: 1.5;
+    }
+
+    &--large {
+      font-size: map-get($font-sizes, 'small');
+    }
+
+    &--huge {
+      font-size: 32px;
+    }
+
+    &--active {
+      color: color('yellow');
+    }
+  }
+
+
+  &__text:not(:first-of-type) + &__label {
+    &::before {
+      content: '\2022';
+      padding: 0 1ex 0 0;
+    }
+  }
+
+
+  &__status {
+    margin: 0;
+    text-align: center;
+    z-index: 1;
+
+    &::before {
+      content: '\2022';
+      padding: 0 1ex 0 0;
+    }
+  }
+}
+
+
+@include responsive('small', 'medium') {
+  .#{$namespace}-competition-header {
+    flex-direction: column;
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__description {
+      position: static;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin: 0 0 rhythm(2) 0;
+    }
+
+      &__label,
+      &__text {
+        margin: 0;
+        font-size: map-get($font-sizes, 'normal');
+        font-weight: bold;
+
+        &:first-of-type {
+          width: 100%;
+          margin: 0;
+          text-align: center;
+        }
+      }
+
+      &__label {
+        color: map-get($text-colors, 'normal');
+
+        &:first-of-type {
+          margin: 0 0 0 0;
+          text-transform: uppercase;
+          font-size: map-get($font-sizes, 'small');
+          font-weight: normal;
+          color: map-get($text-colors, 'dark');
+        }
+
+        &:nth-of-type(2)::before {
+          //display: none;
+        }
+      }
+
+      &__text {
+        margin: 0 0 0 1ex;
+
+        &:first-of-type {
+          margin: 0 0 0 0;
+          font-size: map-get($font-sizes, 'h1');
+        }
+      }
+
+      &__text + &__label {
+        margin: 0 0 0 1ex;
+
+        &:nth-of-type(2)::before {
+          display: none;
+        }
+
+        &::before {
+          content: '\2022';
+          margin: 0 1ex 0 0;
+        }
+      }
+
+
+      &__status {
+        width: 100%;
+        margin: rhythm(.5) 0 0 0;
+        
+        &::before {
+          display: none;
+        }
+      }
+
+
+    &__controls {
+      width: 100%;
+      text-align: center;
+    }
+
+
+    .#{$namespace}-competition-cards {
+      width: 100%;
+      margin: 0;
+      padding: 0 rhythm(1);
+    }
+  }
+}
+
+
+@include responsive('medium') {
+  .#{$namespace}-competition-header {
+  }
+}
+
+
+@include responsive('small') {
+  .#{$namespace}-competition-header {
+  }
+}

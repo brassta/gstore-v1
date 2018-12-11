@@ -1,0 +1,47 @@
+.#{$namespace}-static {
+  &--restricted {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+
+    &__not-available {
+      @include set-background((
+        image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="250" height="123" viewBox="0 0 250 123"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><circle cx="124.22" cy="59.6" r="59.33" stroke="#575F75" stroke-width="4"/><path stroke="#575F75" stroke-linecap="round" stroke-width="4" d="M93.792 68.959L152.315 79"/><path fill="#575F75" fill-rule="nonzero" d="M86.05 26.54s-8.33 10.2-4.33 14.2 4.33-14.2 4.33-14.2z"/><path fill="#575F75" d="M112.35 49.12a5.31 5.31 0 1 0-4.88-5.7 5.33 5.33 0 0 0 4.88 5.7zM135.26 50.89a5.31 5.31 0 1 0-4.88-5.7 5.32 5.32 0 0 0 4.88 5.7z"/><path stroke="#575F75" stroke-width="4" d="M71 91.11a62 62 0 0 1-12.38 4.09c-1.69.36-6.5 1.92-7.82 1-.86-.59-1.56-3.31-1.93-4.23a107 107 0 0 1-7.16-26"/><path stroke="#575F75" stroke-width="4" d="M5.05 64.3C-2.6 61.65.4 53.65 2.4 47.65c1-2 2-3 5-2a9 9 0 0 1 6 6c5-3 7-7 10-11-2-5-6-10-2-15 4-4 7 3 10 6a10.87 10.87 0 0 0 5 1c5 3 10 7 15 10 2 1 3 4 3 6-2 12 1 23 4 35a3.49 3.49 0 0 0 2 1c2-1 5-2 7-2.72"/><path stroke="#575F75" stroke-width="4" d="M18.38 58.47s-1.16-7.67-7.83-6.17c-1.63.57-5.5 9.83-3.83 15.83 3.33 4.34 7.16 3.34 7.16 3.34"/><path stroke="#575F75" stroke-width="4" d="M26.22 68.13s1.83-9-6.67-8.66c-1.17.83-6.83 5.83-3.83 16 4 2.33 17.33 3.23 29.16-13.64"/><path stroke="#575F75" stroke-linecap="round" stroke-width="4" d="M71 91.11a62 62 0 0 1-12.38 4.09c-1.69.36-6.5 1.92-7.82 1-.86-.59-1.56-3.31-1.93-4.23a107 107 0 0 1-7.16-26"/><path stroke="#575F75" stroke-linecap="round" stroke-width="4" d="M5.05 64.3C-2.6 61.65.4 53.65 2.4 47.65c1-2 2-3 5-2a9 9 0 0 1 6 6c5-3 7-7 10-11-2-5-6-10-2-15 4-4 7 3 10 6a10.87 10.87 0 0 0 5 1c5 3 10 7 15 10 2 1 3 4 3 6-2 12 1 23 4 35a3.49 3.49 0 0 0 2 1c2-1 5-2 7-2.72"/><path stroke="#575F75" stroke-linecap="round" stroke-width="4" d="M18.38 58.47s-1.16-7.67-7.83-6.17c-1.63.57-5.5 9.83-3.83 15.83 3.33 4.34 7.16 3.34 7.16 3.34"/><path stroke="#575F75" stroke-linecap="round" stroke-width="4" d="M26.22 68.13s1.83-9-6.67-8.66c-1.17.83-6.83 5.83-3.83 16 4 2.33 17.33 3.23 29.16-13.64M101.29 31.75s1.5-11.73 19-15.23M152.3 39.36s-1.5-11.73-19-15.23"/><path stroke="#575F75" stroke-width="4" d="M174.47 94.27a61.87 61.87 0 0 0 12.37 4.09c1.7.37 6.51 1.92 7.82 1 .86-.58 1.56-3.31 1.94-4.23a107.47 107.47 0 0 0 7.15-26"/><path stroke="#575F75" stroke-width="4" d="M240.37 67.46c7.65-2.65 4.65-10.65 2.65-16.65-1-2-2-3-5-2a9 9 0 0 0-6 6c-5-3-7-7-10-11 2-5 6-10 2-15-4-4-7 3-10 6a10.87 10.87 0 0 1-5 1c-5 3-10 7-15 10-2 1-3 4-3 6 2 12-1 23-4 35a3.49 3.49 0 0 1-2 1 74.69 74.69 0 0 0-7-2.72"/><path stroke="#575F75" stroke-width="4" d="M227 61.63s1.17-7.67 7.84-6.17c1.63.57 5.5 9.83 3.83 15.83-3.33 4.34-7.17 3.34-7.17 3.34"/><path stroke="#575F75" stroke-width="4" d="M219.2 71.29s-1.83-9 6.67-8.66c1.16.83 6.83 5.83 3.83 16-4 2.33-17.33 3.23-29.17-13.63"/><path stroke="#575F75" stroke-linecap="round" stroke-width="4" d="M174.47 94.27a61.87 61.87 0 0 0 12.37 4.09c1.7.37 6.51 1.92 7.82 1 .86-.58 1.56-3.31 1.94-4.23a107.47 107.47 0 0 0 7.15-26"/><path stroke="#575F75" stroke-linecap="round" stroke-width="4" d="M240.37 67.46c7.65-2.65 4.65-10.65 2.65-16.65-1-2-2-3-5-2a9 9 0 0 0-6 6c-5-3-7-7-10-11 2-5 6-10 2-15-4-4-7 3-10 6a10.87 10.87 0 0 1-5 1c-5 3-10 7-15 10-2 1-3 4-3 6 2 12-1 23-4 35a3.49 3.49 0 0 1-2 1 74.69 74.69 0 0 0-7-2.72"/><path stroke="#575F75" stroke-linecap="round" stroke-width="4" d="M227 61.63s1.17-7.67 7.84-6.17c1.63.57 5.5 9.83 3.83 15.83-3.33 4.34-7.17 3.34-7.17 3.34"/><path stroke="#575F75" stroke-linecap="round" stroke-width="4" d="M219.2 71.29s-1.83-9 6.67-8.66c1.16.83 6.83 5.83 3.83 16-4 2.33-17.33 3.23-29.17-13.63"/></g></svg>'),
+        repeat: no-repeat,
+        position: center center,
+        size: contain,
+      ));
+
+      width: 250px;
+      height: rhythm(6);
+
+      figcaption {
+        display: none;
+      }
+    }
+
+
+    &__title {
+      margin: rhythm(1) 0;
+      font-weight: bold;
+    }
+
+
+    &__message {
+      font-size: map-get($font-sizes, large);
+      color: color('gray');
+    }
+
+
+    .#{$namespace}-static__header {
+      height: rhythm(4.5);
+    }
+
+
+    .#{$namespace}-static__footer {
+      height: rhythm(4.5);
+    }
+  }
+}

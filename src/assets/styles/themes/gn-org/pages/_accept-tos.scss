@@ -1,0 +1,96 @@
+.#{$namespace}-accept-tos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  .#{$namespace}-logo {
+    margin: 0 0 rhythm(2) 0;
+  }
+
+
+  &__box {
+    max-width: 560px;
+    padding: 0;
+
+    h2, h4 {
+      margin-top: 0;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-weight: bold;
+    }
+
+    &__footer {
+      @include set-border((
+        side: top,
+        width: 1px,
+        style: solid,
+        color: color('white', alpha, 10),
+        radius: 4px,
+      ));
+
+      margin: 0;
+      padding: rhythm(.25);
+      background: color('white', alpha, 5);
+    }
+  }
+
+
+  .#{$namespace}-form__body {
+    padding: rhythm(1.5);
+
+    .#{$namespace}-label {
+      margin: 0 0 rhythm(.5) 0;
+      font-size: map-get($font-sizes, large);
+
+      &__text {
+        font-weight: normal;
+        color: map-get($text-colors, alt);
+      }
+
+      .#{$namespace}-checkbox {
+        border-width: 1px;
+        border-color: color('white', alpha, 10);
+        border-radius: 4px;
+
+        &:checked + .#{$namespace}-label__text {
+          font-weight: normal;
+          color: map-get($text-colors, alt);
+        }
+      }
+    }
+  }
+
+
+  &__container {
+    padding: rhythm(1.5);
+  }
+
+
+  &__text {
+    @include set-border((
+      width: 1px,
+      style: solid,
+      color: color('white', alpha, 10),
+      radius: 4px,
+    ));
+
+    height: rhythm(12.5);
+    margin: 0 0 rhythm(1) 0;
+    padding: rhythm(1);
+    overflow-y: auto;
+    background: map-get($background-colors, 'control');
+
+    p {
+      font-size: map-get($font-sizes, large);
+      line-height: 1.5;
+      color: map-get($text-colors, alt);
+    }
+  }
+
+  .#{$namespace}-footer {
+    margin: rhythm(2) 0 0 0;
+  }
+}

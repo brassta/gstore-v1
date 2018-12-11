@@ -1,0 +1,47 @@
+$header-height: rhythm(3.5);
+$header-padding: rhythm(.75);
+$header-background: (
+  color: color('tertiary'),
+  image: linear-gradient(225deg, color('quaternary') 0%, color('tertiary') 100%),
+);
+$header-border: none;
+$header-shadow: 0 0 20px 0 rgba(0,0,0,0.5), 0 -1px 0 0 rgba(255,255,255,0.1), 0 2px 4px -1px rgba(0,0,0,0.2);
+
+$header-item-height: rhythm(2);
+
+
+.#{$namespace}-header {
+  @include set-border($header-border);
+  @include set-background($header-background);
+
+  flex: 0 0 auto;
+  padding: $header-padding;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $header-height;
+  z-index: 3;
+  box-shadow: $header-shadow;
+
+  &__actions {
+    display: flex;
+    margin-left: auto;
+    align-content: flex-end;
+
+    > [class^="#{$namespace}-"] + [class^="#{$namespace}-"] {
+      margin-left: 20px;
+    }
+  }
+}
+
+
+.#{$namespace}-account-settings-toggle {
+  width: 70px;
+  height: rhythm(2);
+
+  > [role="menu"] {
+    top: $header-item-height + ($header-height - $header-item-height) / 2;
+    right: -($header-height - $header-item-height) / 2;
+    width: 265px;
+  }
+}

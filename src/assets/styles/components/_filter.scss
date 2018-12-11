@@ -1,0 +1,28 @@
+$filter-button-height: rhythm(1.5) !default;
+$filter-button-margin: 0 !default;
+$filter-button-padding: rhythm(.25) rhythm(.75) !default;
+$filter-button-spacing: 5px !default;
+$filter-button-font-size: map-get($font-sizes, 'small') !default;
+
+
+.#{$namespace}-filter {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  .#{$namespace}-button {
+    @extend .#{$namespace}-button--tertiary;
+
+    height: $filter-button-height;
+    margin: $filter-button-margin;
+    padding: $filter-button-padding;
+    font-size: $filter-button-font-size;
+  }
+
+  .#{$namespace}-button + .#{$namespace}-button {
+    margin-left: $filter-button-spacing;
+  }
+}
+
+
+

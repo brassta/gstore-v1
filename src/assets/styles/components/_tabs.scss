@@ -1,0 +1,158 @@
+$tabs-margin: 0 !default;
+$tabs-padding: 0 !default;
+$tabs-box-shadow: inset 0 -2px 0 0 transparent !default;
+
+$tabs-list-margin: 0 0 rhythm(1) 0 !default;
+$tabs-list-padding: 0 !default;
+$tabs-list-border: none !default;
+
+$tabs-item-margin: 0 !default;
+$tabs-item-padding: 0 !default;
+
+$tabs-text-margin: 0 !default;
+$tabs-text-padding: rhythm(.25) rhythm(1) rhythm(.75) rhythm(1) !default;
+$tabs-text-size: map-get($font-sizes, 'large') !default;
+$tabs-text-weight: normal !default;
+$tabs-text-color: map-get($text-colors, 'dark') !default;
+$tabs-text-decoration: none !default;
+$tabs-text-background: transparent;
+$tabs-text-border: none !default;
+
+$tabs-text-active-color: map-get($text-colors, 'normal') !default;
+$tabs-text-active-background: transparent !default;
+$tabs-text-active-border: none !default;
+$tabs-text-active-box-shadow: inset 0 -2px 0 0 map-get($background-colors, 'hover') !default;
+
+$tabs-text-hover-color: map-get($text-colors, 'normal') !default;
+$tabs-text-hover-background: transparent !default;
+$tabs-text-hover-border: none !default;
+$tabs-text-hover-box-shadow: inset 0 -2px 0 0 map-get($background-colors, 'selected') !default;
+
+$tabs-content-margin: 0 !default;
+$tabs-content-padding: 0 !default;
+$tabs-content-border: none !default;
+$tabs-content-background: transparent !default;
+
+
+@mixin tab-transition() {
+  &.fade {
+    opacity: 0;
+    transition: opacity .15s linear;
+
+    &.in {
+      opacity: 1;
+    }
+  }
+}
+
+
+/// Tabs wrapper
+
+.#{$namespace}-tabs {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: $tabs-margin;
+  padding: $tabs-padding;
+}
+
+
+/// Tab item list
+
+.#{$namespace}-tabs__list {
+// [role="tablist"] {
+  @include set-border($tabs-list-border);
+
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  margin: $tabs-list-margin;
+  padding: $tabs-list-padding;
+  font-size: $tabs-text-size;
+  font-weight: $tabs-text-weight;
+  box-shadow: $tabs-box-shadow;
+}
+
+
+/// Tab item
+
+.#{$namespace}-tab {
+  display: inline-block;
+  margin: $tabs-item-margin;
+  padding: $tabs-item-padding;
+
+  &.active {
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &:hover:not(.active) {
+    z-index: 1;
+
+    > [role="tab"] {
+      @include set-border($tabs-text-hover-border, $tabs-text-padding);
+      @include set-background($tabs-text-hover-background);
+
+      color: $tabs-text-hover-color;
+      box-shadow: $tabs-text-hover-box-shadow;
+    }
+  }
+
+  /// Tab item text
+  > [role="tab"] {
+    @include set-border($tabs-text-border, $tabs-text-padding);
+    @include set-background($tabs-text-background);
+
+    display: block;
+    margin: $tabs-text-margin;
+    color: $tabs-text-color;
+    text-decoration: $tabs-text-decoration;
+
+    &:focus {
+      @include focus(null);
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &[aria-selected="true"] {
+      @include set-border($tabs-text-active-border, $tabs-text-padding);
+      @include set-background($tabs-text-active-background);
+
+      color: $tabs-text-active-color;
+      box-shadow: $tabs-text-active-box-shadow;
+    }
+  }
+}
+
+
+/// Tab content holder
+
+.#{$namespace}-tabs__content {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+
+/// Tab content
+
+.#{$namespace}-tab__panel {
+//> [role="tabpanel"] {
+  @include set-border($tabs-content-border, $tabs-content-padding);
+  @include set-background($tabs-content-background);
+  @include tab-transition;
+
+  flex: 1 1 auto;
+  display: none;
+  margin: $tabs-content-margin;
+
+  &[aria-hidden="true"] {
+    opacity: 0;
+  }
+
+  &.active {
+    display: block;
+  }
+}

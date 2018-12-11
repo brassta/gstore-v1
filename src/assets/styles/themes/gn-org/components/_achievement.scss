@@ -1,0 +1,48 @@
+$achievement-width: rhythm(8);
+$achievement-height: rhythm(8);
+$achievement-badge-height: rhythm(4.5);
+$achievement-badge-margin: rhythm(2) 0 0 0;
+$achievement-rank-font-size: map-get($font-sizes, 'tiny');
+$achievement-rank-text-transform: uppercase;
+$achievement-level-margin: rhythm(.5) 0 0 0;
+$achievement-level-font-size: map-get($font-sizes, 'h2');
+$achievement-level-font-style: normal;
+$achievement-level-max-color: map-get($text-colors, 'normal');
+
+
+.#{$namespace}-achievement {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: $achievement-width;
+  height: $achievement-height;
+
+  &__gauge {
+    position: absolute;
+    width: $achievement-width;
+    height: $achievement-width;
+  }
+
+  &__badge {
+    width: 100%;
+    height: $achievement-badge-height;
+    margin: $achievement-badge-margin;
+  }
+
+  &__rank {
+    font-size: $achievement-rank-font-size;
+    text-transform: $achievement-rank-text-transform;
+  }
+
+  &__level {
+    margin: $achievement-level-margin;
+    font-size: $achievement-level-font-size;
+    font-style: $achievement-level-font-style;
+
+    &__max {
+      color: $achievement-level-max-color;
+      font-style: inherit;
+    }
+  }
+}

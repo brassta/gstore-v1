@@ -1,0 +1,33 @@
+///
+/// Competition Info tab
+///
+.#{$namespace}-competition-info {
+  height: 100%;
+
+  &__content {
+    width: 990px;
+    margin: 0 auto;
+    padding: 0;
+
+    &__title {
+      margin: 0;
+    }
+  }
+
+  &__separator {
+    margin: rhythm(1) 0;
+    border-bottom: 1px solid white;
+  }
+}
+
+
+@include responsive('small', 'medium') {
+  .#{$namespace}-competition-info {
+    //overflow-y: auto;
+
+    &__content {
+      width: 100%;
+      padding: rhythm(1);
+    }
+  }
+}

@@ -1,0 +1,108 @@
+///
+/// Participants tab
+///
+
+
+$competition-participants-width: 990px;
+$competition-participant-width: 300px;
+$competition-participant-description-width: 200px;
+$competition-participant-height: rhythm(4);
+$competition-participant-margin: rhythm(0.5) rhythm(0.5);
+$competition-participant-padding: rhythm(.5) rhythm(1);
+$competition-participant-background: linear-gradient(135deg, #474A6D 0%, #22243B 100%);
+$competition-participant-box-shadow: 0 0 10px 0 rgba(0,0,0,0.4), 0 0 120px 40px rgba(255,255,255,0.01), 0 2px 4px -1px rgba(0,0,0,0.2);
+$competition-participant-hover-border: (
+  width: 1px,
+  style: solid,
+  color: color('cyan'),
+);
+$competition-participant-avatar-margin: 0 rhythm(1) 0 0;
+
+
+.#{$namespace}-competition-participants {
+  height: 100%;
+  //overflow-y: scroll;
+
+  &__list {
+    width: $competition-participants-width;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .#{$namespace}-participant {
+    float: left;
+    //min-width: 200px;
+    //max-width: 300px;
+    //flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    width: $competition-participant-width;
+    height: $competition-participant-height;
+    margin: $competition-participant-margin;
+    padding: $competition-participant-padding;
+    border-radius: $default-border-radius;
+    background: $competition-participant-background;
+    box-shadow: $competition-participant-box-shadow;
+
+    &:hover {
+      @include set-border($competition-participant-hover-border);
+    }
+
+    .#{$namespace}-avatar {
+      flex: 0 0 auto;
+      margin: $competition-participant-avatar-margin;
+    }
+
+    &__description {
+      max-width: $competition-participant-description-width;
+    }
+
+    &__username {
+      @include ellipsis;
+
+      width: 100%;
+    }
+  }
+}
+
+
+@include responsive('small', 'medium') {
+  .#{$namespace}-competition-participants {
+    //overflow-y: auto;
+
+    &__list {
+      width: 100%;
+    }
+  }
+}
+
+
+@include responsive('medium') {
+  .#{$namespace}-competition-participants {
+    &__list {
+      @include card-widths(
+        $competition-participant-width,
+        1,
+        3,
+        1,
+        1
+      );
+    }
+  }
+}
+
+
+@include responsive('small') {
+  .#{$namespace}-competition-participants {
+    .#{$namespace}-participant {
+      flex-direction: column;
+      width: calc(50% - #{2 * nth($competition-participant-margin, 2)});
+      height: rhythm(6);
+      text-align: center;
+
+      .#{$namespace}-avatar {
+        margin: 0;
+      }
+    }
+  }
+}

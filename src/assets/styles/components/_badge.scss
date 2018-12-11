@@ -1,0 +1,65 @@
+$badge-size: rhythm(1) !default;
+$badge-margin: 0 !default;
+$badge-padding: 0 rhythm(.25) !default;
+$badge-font-size: map-get($font-sizes, 'small') !default;
+$badge-font-weight: normal !default;
+$badge-text-transform: none !default;
+$badge-color: map-get($text-colors, 'hover') !default;
+$badge-shadow: 0 0 0 1px map-get($border-colors, 'normal') !default;
+$badge-background: map-get($background-colors, 'window') !default;
+$badge-active-background: map-get($background-colors, 'window') !default;
+$badge-inactive-background: color('gray') !default;
+$badge-radius: rhythm(.5) !default;
+$badge-spacing: 12px !default;
+
+$badge-small-size: rhythm(.75) !default;
+$badge-small-margin: rhythm(.125) 0 !default;
+$badge-small-padding: 0 rhythm(.125) !default;
+
+
+.#{$namespace}-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: $badge-size;
+  height: $badge-size;
+  margin: $badge-margin;
+  padding: $badge-padding;
+
+  font-size: $badge-font-size;
+  font-weight: $badge-font-weight;
+  text-transform: $badge-text-transform;
+
+  color: $badge-color;
+  background: $badge-background;
+  border-radius: $badge-radius;
+  box-shadow: $badge-shadow;
+
+
+  &--active {
+    background: $badge-active-background;
+  }
+
+
+  &--inactive {
+    background: $badge-inactive-background;
+  }
+
+
+  &--small {
+    height: $badge-small-size;
+    margin: $badge-small-margin;
+    padding: $badge-small-padding;
+  }
+
+
+  &--left {
+    margin-left: $badge-spacing;
+  }
+
+
+  &--right {
+    margin-right: $badge-spacing;
+  }
+}

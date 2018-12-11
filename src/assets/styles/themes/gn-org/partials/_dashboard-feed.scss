@@ -1,0 +1,116 @@
+$dashboard-feed-width: 960px;
+$dashboard-feed-margin: 0 auto;
+$dashboard-feed-padding: rhythm(1) 0;
+
+$dashboard-feed-header-margin: 0 0 rhythm(1) 0;
+$dashboard-feed-header-color: map_get($text-colors, 'dark');
+$dashboard-feed-header-text-transform: uppercase;
+
+$dashboard-feed-timeline-line-width: 1px;
+$dashboard-feed-timeline-line-color: color('white', 'alpha', 10);
+
+$dashboard-feed-time-width: 170px;
+$dashboard-feed-time-margin: 0;
+$dashboard-feed-time-padding: rhythm(1) rhythm(1) rhythm(1) 0;
+$dashboard-feed-time-color: map-get($text-colors, 'dark');
+$dashboard-feed-time-today-color: map-get($text-colors, 'normal');
+$dashboard-feed-time-background: linear-gradient(0deg, #FAA728 0%, #F26122 100%);
+$dashboard-feed-time-line-width: 3px;
+
+
+.#{$namespace}-feed {
+  width: $dashboard-feed-width;
+  margin: $dashboard-feed-margin;
+  padding: $dashboard-feed-padding;
+
+
+  &__heading {
+    color: $dashboard-feed-header-color;
+    text-transform: $dashboard-feed-header-text-transform;
+  }
+
+
+  &__timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: $dashboard-feed-time-width;
+      top: 0;
+      bottom: 0;
+      display: block;
+      width: $dashboard-feed-timeline-line-width;
+      background: $dashboard-feed-timeline-line-color;
+    }
+  }
+
+
+    &__section {
+      &__header {
+
+      }
+    }
+
+
+      &__time {
+        position: relative;
+        width: $dashboard-feed-time-width;
+        margin: $dashboard-feed-time-margin;
+        padding: $dashboard-feed-time-padding;
+        color: $dashboard-feed-time-color;
+
+        &--today {
+          color: $dashboard-feed-time-today-color;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: -#{floor($dashboard-feed-time-line-width / 2) + $dashboard-feed-timeline-line-width};
+          width: $dashboard-feed-time-line-width;
+          height: 100%;
+          bottom: 0;
+          background-image: $dashboard-feed-time-background;
+        }
+      }
+}
+
+
+@include responsive('small', 'medium') {
+  .#{$namespace}-feed {
+    width: 100%;
+    padding: rhythm(1);
+
+    &__heading {
+      margin: 0;
+    }
+
+    &__timeline {
+      &::before {
+        display: none;
+      }
+    }
+
+    &__time {
+      width: 100%;
+      margin: rhythm(1.75) 0;
+      padding: rhythm(.25) 0 rhythm(.25) rhythm(1);
+
+      &::after {
+        left: 0;
+        right: unset;
+      }
+    }
+
+    &__section {
+      &__header {
+
+      }
+    }
+  }
+}

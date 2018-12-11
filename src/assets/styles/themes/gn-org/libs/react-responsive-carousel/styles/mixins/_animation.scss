@@ -1,0 +1,7 @@
+@mixin transition($transition-property, $transition-time, $method) {
+    transition: $transition-property $transition-time $method;
+}
+
+@mixin enhanceAnimations() {
+    transform: translate3d(0,0,0);
+}

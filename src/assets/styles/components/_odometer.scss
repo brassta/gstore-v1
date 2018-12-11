@@ -1,0 +1,80 @@
+$odometer-font-size: map-get($font-sizes, 'large') !default;
+$odometer-font-weight: 500 !default;
+$odometer-transition: transform 1s !default;
+
+
+.#{$namespace}-odometer {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: $odometer-font-size;
+  font-weight: $odometer-font-weight;
+
+
+  .odometer-digit {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+    .odometer-digit-spacer {
+      display: inline-block;
+      vertical-align: middle;
+      visibility: hidden;
+    }
+
+      .odometer-digit-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        text-align: left;
+        overflow: hidden;
+      }
+
+
+    .odometer-ribbon {
+      display: block;
+    }
+
+      .odometer-ribbon-inner {
+        display: block;
+        backface-visibility: hidden;
+      }
+
+
+    .odometer-value {
+      display: block;
+      text-align: center;
+      transform: translateZ(0);
+    }
+
+      .odometer-last-value {
+        position: absolute;
+      }
+
+
+  &.odometer-animating-up {
+    .odometer-ribbon-inner {
+      transition: $odometer-transition;
+    }
+
+    &.odometer-animating .odometer-ribbon-inner {
+      transform: translateY(-100%);
+    }
+  }
+
+
+  &.odometer-animating-down {
+    .odometer-ribbon-inner {
+      transform: translateY(-100%);
+    }
+
+    &.odometer-animating .odometer-ribbon-inner {
+      transition: $odometer-transition;
+      transform: translateY(0);
+    }
+  }
+}

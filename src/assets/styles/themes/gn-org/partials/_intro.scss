@@ -1,0 +1,38 @@
+$intro-stars-background: (
+  image: $stars-background,
+  repeat: no-repeat,
+  position: center center
+);
+
+.#{$namespace}-intro {
+  text-align: center;
+
+  figure {
+    height: 265px;
+    width: 100%;
+    @include set-background($intro-stars-background);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2 {
+    margin-bottom: rhythm(.75);
+  }
+
+  p {
+    padding: 0 rhythm(2);
+    color: map_get($text-colors, 'dark');
+    font-size: map_get($font-sizes, 'large');
+  }
+
+  &__gold {
+    color: color('gold');
+  }
+
+  &__mgo {
+    color: color('white');
+  }
+}

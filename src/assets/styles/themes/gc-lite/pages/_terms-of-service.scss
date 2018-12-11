@@ -1,0 +1,25 @@
+$tos-max-height: rhythm(20);
+$tos-margin: rhythm(2);
+
+
+.#{$namespace}-terms-of-service {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+
+
+  &--modal {
+    .#{$namespace}-modal__body {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+  article {
+    flex: 1 1 auto;
+    margin-bottom: $tos-margin;
+    text-align: left;
+    overflow-y: auto;
+  }
+}

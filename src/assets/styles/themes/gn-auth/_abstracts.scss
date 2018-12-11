@@ -1,0 +1,168 @@
+@import '../../abstracts/namespace';
+@import '../../abstracts/functions';
+@import '../../abstracts/mixins';
+
+
+///
+/// abstracts/colors.scss
+///
+
+$palette-configuration: (
+  shades: (
+    'alpha-10':   .1,  // 10% opacity
+    'alpha-20':   .2,
+    'alpha-30':   .3,
+    'alpha-40':   .4,
+    'alpha-50':   .5,
+    'alpha-60':   .6,
+    'alpha-70':   .7,
+    'alpha-80':   .8,
+    'alpha-90':   .9,  // 90% opacity
+    'dark-90':  -90%,  // extra dark
+    'dark-80':  -80%,
+    'dark-70':  -70%,
+    'dark-60':  -60%,
+    'dark-50':  -50%,
+    'dark-40':  -40%,
+    'dark-30':  -30%,
+    'dark-20':  -20%,
+    'dark-10':  -10%,
+    'dark-5':   -5%,  // little dark
+    'light-5':   5%,  // little light
+    'light-10':  10%,
+    'light-20':  20%,
+    'light-30':  30%,
+    'light-40':  40%,
+    'light-50':  50%,
+    'light-60':  60%,
+    'light-70':  70%,
+    'light-80':  80%,
+    'light-90':  90%,  // extra light
+  ),
+
+  predefined: (
+    'primary':    #23203C,
+    'secondary':  #22243B,
+    'tertiary':   #474A6D,
+  ),
+
+  colors: (
+    'black':      #111020,
+    'white':      #FFFFFF,
+    'red':        #F03E3E,
+    'orange':     #F26122,
+    'yellow':     #F59F00,
+    'green':      #37B24D,
+    'cyan':       #72C1FD,
+    'blue':       #1c7ed6,
+  )
+);
+
+
+@import '../../abstracts/colors';
+
+
+///
+/// abstracts/variables.scss
+///
+
+// The font sizes for h1-h6.
+$h5-font-size: 14px;
+$h6-font-size: 10px;
+
+
+$text-colors: (
+  'normal':   color('white'),
+  'dark':     color('white', 'alpha', 40),
+  'light':    color('white', 'alpha', 60),
+  'bright':   color('white', 'alpha', 80),
+  'inverse':  color('primary'),
+
+  'active':   color('cyan'),
+  'opaque':   color('white', 'alpha', 20),
+
+  'link':     color('cyan'),
+  'hover':    color('cyan'),
+  'button':   color('white'),
+
+  'alert':    color('red'),
+  'error':    color('red'),
+  'warning':  color('yellow'),
+  'success':  color('green'),
+  'info':     color('blue'),
+);
+
+
+$background-colors: (
+  'normal':       color('primary'),
+  'window':       color('tertiary'),
+  'body':         color('secondary'),
+  'control':      color('black', 'alpha', 40),
+
+  'button':       color('orange'),
+  'selected':     color('cyan'),
+  'hover':        color('cyan'),
+
+  'primary':      color('orange'),
+  'default':      color('orange'),
+  'success':      color('green'),
+  'error':        color('red'),
+  'alert':        color('red'),
+  'warning':      color('yellow'),
+  'info':         color('cyan'),
+);
+
+
+$border-colors: (
+  'dark':     color('primary'),
+  'normal':   color('primary', 'alpha', 80),
+  'light':    color('primary', 'alpha', 40),
+
+  'input':    color('primary', 'alpha', 80),
+  'button':   color('orange'),
+  'inverse':  color('white'),
+  'selected': color('yellow'),
+  'hover':    color('yellow'),
+
+  'primary':  color('orange'),
+  'alert':    color('red'),
+  'error':    color('red'),
+  'warning':  color('yellow'),
+  'success':  color('green'),
+  'info':     color('cyan'),
+);
+
+
+$breakpoints: (
+  'small': (min-width: 320px, max-width: 767px),
+  'medium': (min-width: 768px, max-width: 1279px),
+  'large': (min-width: 1280px),
+);
+
+
+$application: (
+  titlebar: (
+    height: 1,
+  ),
+
+  header: (
+    height: 3.5,
+  ),
+
+  background: (
+    image: linear-gradient(0deg, #272543 0%, #111020 100%),
+  ),
+
+  scrollbar: (
+    size: 9px,
+  ),
+
+  text: (
+    color: map-get($text-colors, 'normal'),
+  ),
+);
+
+
+// Order matters!
+@import '../../abstracts/variables';
+@import '../../abstracts/animations';

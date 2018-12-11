@@ -1,0 +1,21 @@
+.#{$namespace}-insufficient-funds {
+  padding: rhythm(1.5) rhythm(2) rhythm(.25);
+  text-align: center;
+
+  &__text {
+    @extend .#{$namespace}-text--alt;
+
+    &__currency {
+      color: color('gold');
+    }
+
+    a {
+      color: #72C1FD;
+      text-decoration: none;
+
+      &:hover, &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+$stepper-background: map-get($background-colors, 'body') !default;
+
+$stepper-steps-margin: 0 !default;
+$stepper-steps-padding: rhythm(1.5) rhythm(1) rhythm(1) rhythm(1) !default;
+$stepper-steps-background: color('secondary', 'alpha', 30) !default;
+
+$stepper-step-margin: 0 !default;
+$stepper-step-padding: rhythm(1) 0 0 0 !default;
+$stepper-step-counter-size: rhythm(1.5) !default;
+$stepper-step-joint-height: 2px !default;
+
+$stepper-done-joint-background: map-get($border-colors, 'success') !default;
+$stepper-previous-step-content: '' !default;
+$stepper-previous-step-color: map-get($text-colors, 'dark') !default;
+$stepper-previous-step-counter-color: map-get($text-colors, 'inverse') !default;
+
+$stepper-active-joint-background: linear-gradient(270deg, #005EBD 0%, #22D682 100%) !default;
+$stepper-active-step-content: counter(step-counter) !default;
+$stepper-active-step-color: map-get($text-colors, 'hover') !default;
+$stepper-active-step-counter-color: map-get($text-colors, 'inverse') !default;
+$stepper-active-step-counter-background: map-get($background-colors, 'hover') !default;
+
+$stepper-inactive-joint-background: map-get($border-colors, 'normal') !default;
+$stepper-next-step-content: counter(step-counter) !default;
+$stepper-next-step-color: map-get($text-colors, 'dark') !default;
+$stepper-next-step-counter-color: map-get($text-colors, 'hover') !default;
+$stepper-next-step-counter-background: map-get($background-colors, 'control') !default;
+
+$stepper-content-padding: rhythm(1) rhythm(1.5) !default;
+
+$stepper-indicator-margin: rhythm(.5);
+$stepper-indicator-padding: 0;
+$stepper-indicator-step-margin: 0 rhythm(.5);
+$stepper-indicator-step-padding: 0;
+$stepper-indicator-step-size: rhythm(.5);
+$stepper-indicator-background: map-get($background-colors, 'normal') !default;
+$stepper-indicator-previous-background: map-get($background-colors, 'hover') !default;
+$stepper-indicator-active-background: map-get($background-colors, 'hover') !default;
+$stepper-indicator-next-background: map-get($background-colors, 'normal') !default;
+
+$stepper-buttons-padding: rhythm(.5) 0 0 0;

@@ -1,0 +1,84 @@
+///
+/// Current Ladder tab
+///
+
+
+.#{$namespace}-current-ladder {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: $esports-competitions-padding;
+
+  &__header {
+    width: $esports-competitions-width;
+    margin: rhythm(1) auto;
+    padding: 0 rhythm(1.5);
+    flex: 0 0 auto;
+  }
+
+  &__content {
+    position: relative;
+    overflow-y: scroll;
+    flex: 1 1 auto;
+  }
+
+
+  .#{$namespace}-competition-cards {
+    @include card-widths(
+      $card-width,
+      1,
+      3,
+      2 * nth($esports-competitions-current-ladder-card-margin, 1),
+      nth($esports-competitions-current-ladder-card-margin, 1)
+    );
+  }
+
+
+  .#{$namespace}-card {
+    z-index: $esports-competition-card-z-index;
+    position: relative;
+    float: left;
+    margin: $esports-competitions-current-ladder-card-margin;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 0;
+
+    &__title {
+      color: #fff;
+    }
+
+    &:hover {
+      overflow: visible;
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px 0 color('black', 'alpha', 90);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: $esports-competition-card-shadow-z-index;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.4), 0 0 120px 40px rgba(255,255,255,0.01), 0 2px 4px -1px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+  }
+
+}
+
+
+@include responsive('small', 'medium') {
+  .#{$namespace}-current-ladder {
+    &__header {
+      width: 100%;
+    }
+  }
+}
+
+

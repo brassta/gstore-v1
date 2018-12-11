@@ -1,0 +1,100 @@
+$dashboard-card-margin: 0 0 0 210px;
+$dashboard-card-padding: rhythm(1) rhythm(1);
+$dashboard-card-spacing: rhythm(1.5);
+$dashboard-card-font-size: map-get($font-sizes, 'h2');
+$dashboard-card-text-color: color('gray');
+$dashboard-card-border: ( radius: 4px, );
+$dashboard-card-box-shadow: 0 2px 8px 0 #11171F;
+$dashboard-card-background: color('secondary');
+$dashboard-card-header-margin: rhythm(-1) rhythm(-1) rhythm(1) rhythm(-1);
+$dashboard-card-header-padding: rhythm(1);
+$dashboard-card-header-font-size: map-get($font-sizes, 'h4');
+
+$dashboard-task-icon-size: 30px;
+$dashboard-task-font-weight: normal;
+$dashboard-task-text-color: color('gray');
+$dashboard-task-active-color: map-get($text-colors, 'normal');
+
+$dashboard-announcement-border: (
+  side: 'bottom',
+  width: 1px,
+  style: solid,
+  color: map-get($border-colors, 'dark'),
+);
+
+
+.#{$namespace}-dashboard-card {
+  @include set-border($dashboard-card-border);
+
+  margin: $dashboard-card-margin;
+  padding: $dashboard-card-padding;
+  color: $dashboard-card-text-color;
+  background: $dashboard-card-background;
+  box-shadow: $dashboard-card-box-shadow;
+
+  & + & {
+    margin-top: $dashboard-card-spacing;
+  }
+
+  &__header {
+    @include set-border($dashboard-announcement-border);
+
+    margin: $dashboard-card-header-margin;
+    padding: $dashboard-card-header-padding;
+    text-align: left;
+
+    .#{$namespace}-heading {
+      margin: 0;
+      padding: 0;
+      font-size: $dashboard-card-header-font-size;
+    }
+  }
+
+
+  /// Dashboard card types
+
+  .#{$namespace}-dashboard-task {
+    display: flex;
+    font-size: $dashboard-card-font-size;
+    font-weight: $dashboard-task-font-weight;
+    line-height: $dashboard-task-icon-size;
+    color: $dashboard-task-text-color;
+
+    &__icon {
+      color: inherit;
+    }
+
+    &--active {
+      color: $dashboard-task-active-color;
+      cursor: pointer;
+    }
+  }
+
+
+  .#{$namespace}-dashboard-announcement {
+
+  }
+
+
+  .#{$namespace}-dashboard-achievement {
+    text-align: center;
+  }
+}
+
+
+@include responsive('small', 'medium') {
+  .#{$namespace}-dashboard-card {
+    margin-left: 0;
+
+    .#{$namespace}-dashboard-task {
+      align-items: center;
+      font-size: map-get($font-sizes, 'large');
+      line-height: $base-line-height;
+
+      .#{$namespace}-icon {
+        flex: 0 0 auto;
+        transform: scale(.75);
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.#{$namespace}-profile__header {
+  @include set-background($profile-header-background);
+
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: rhythm(15);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-origin: padding-box;
+
+
+  &__change-cover {
+    @include icon-hover(color('white'));
+
+    position: absolute;
+    top: rhythm(1);
+    right: rhythm(1);
+    margin: 0;
+  }
+  //
+  //.#{$namespace}-avatar {
+  //  border: 3px solid #7F8FA4;
+  //}
+}
+
+
+@include responsive('medium', 'small') {
+  .#{$namespace}-profile__header {
+    position: relative;
+  }
+}

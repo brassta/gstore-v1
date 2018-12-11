@@ -1,0 +1,41 @@
+///
+/// components/slider.scss
+///
+$slider-width: 300px;
+$slider-height: 4px;
+$slider-margin: 0;
+$slider-padding: 0;
+$slider-border: 0;
+$slider-background: color('orange', 'alpha', 10);
+
+$slider-bar-background: color('orange', 'alpha', 70);
+$slider-bar-radius: $default-border-radius;
+
+$slider-thumb-size: 16px;
+$slider-thumb-background: map-get($background-colors, 'primary');
+
+$slider-header-margin: 0 0 rhythm(1.5) 0;
+$slider-header-color: map-get($text-colors, 'dark');
+
+$slider-hint-font-size: map-get($font-sizes, 'small');
+
+$slider-body-height: rhythm(1);
+$slider-body-margin: 0 0 rhythm(.5) 0;
+
+$slider-input-offset: rhythm(2);
+$slider-input-width: calc(100% - #{$slider-input-offset});
+$slider-input-background: map-get($background-colors, 'primary');
+$slider-input-minmax-top: 8px;
+$slider-input-minmax-width: 20px;
+$slider-input-minmax-font-size: map-get($font-sizes, 'tiny');
+$slider-input-minmax-color: map-get($text-colors, 'normal');
+
+$slider-value-top: rhythm(-1);
+$slider-value-width: 16px;
+$slider-value-margin: 0 0 0 rhythm(1);
+
+$slider-ticks-width: calc(100% - #{$slider-input-offset} - #{$slider-thumb-size});
+$slider-ticks-left: #{$slider-thumb-size / 2};
+$slider-ticks-height: 5px;
+$slider-ticks-margin: 0 0 0 rhythm(1);
+$slider-ticks-border: 1px solid color('primary', 'alpha', 90);

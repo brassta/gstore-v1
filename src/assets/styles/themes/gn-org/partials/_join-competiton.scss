@@ -1,0 +1,37 @@
+.#{$namespace}-join-competition {
+  padding: rhythm(1.5) rhythm(2) rhythm(1.5);
+  text-align: center;
+
+  &__heading {
+  }
+
+  &__text {
+    @extend .#{$namespace}-text--alt;
+  }
+
+  &__fee {
+    color: color('gold');
+  }
+
+  &__footer {
+    .#{$namespace}-button {
+      text-transform: uppercase;
+
+      &--fixed {
+        width: 110px;
+      }
+    }
+  }
+}
+
+
+@include responsive('small') {
+  .#{$namespace}-donate {
+    padding: 0;
+
+    &__heading {
+      margin: rhythm(2) 0;
+    }
+
+  }
+}

@@ -1,0 +1,31 @@
+.#{$namespace}-donate {
+  padding: rhythm(1.5) rhythm(2) rhythm(1.5);
+  text-align: center;
+
+  &__heading {
+  }
+
+  &__text {
+    @extend .#{$namespace}-text--alt;
+  }
+
+  .#{$namespace}-slider {
+    margin-top: rhythm(1.5);
+  }
+
+  &__currency {
+    color: color('gold');
+  }
+}
+
+
+@include responsive('small') {
+  .#{$namespace}-donate {
+    padding: 0;
+
+    &__heading {
+      margin: rhythm(2) 0;
+    }
+
+  }
+}

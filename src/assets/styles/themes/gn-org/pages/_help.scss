@@ -1,0 +1,32 @@
+$help-font-size: map-get($font-sizes, 'h2');
+$help-image-height: 120px;
+$help-image-margin: 0 0 rhythm(2) 0;
+$help-title-margin: 0 0 rhythm(1) 0;
+$help-title-text-transform: uppercase;
+$help-title-color: map-get($text-colors, 'dark');
+
+
+.#{$namespace}-help {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__image {
+    height: $help-image-height;
+    margin: $help-image-margin;
+  }
+
+
+  &__title {
+    margin: $help-title-margin;
+    text-transform: $help-title-text-transform;
+    color: $help-title-color;
+  }
+
+
+  &__contact {
+    font-size: $help-font-size;
+  }
+}

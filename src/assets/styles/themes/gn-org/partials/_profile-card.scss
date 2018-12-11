@@ -1,0 +1,114 @@
+$profile-card-width: 465px;
+$profile-card-height: 200px;
+$profile-card-border: ( radius: 4px, );
+$profile-card-background: ( color: #23203C, );
+$profile-card-box-shadow: 0 2px 8px 0 #11171F;
+
+$profile-card-header-padding: rhythm(.5) rhythm(1);
+$profile-card-header-height: rhythm(2.5);
+$profile-card-header-color: map-get($text-colors, 'normal');
+$profile-card-header-border: (
+  side: 'bottom',
+  width: 1px,
+  style: solid,
+  color: map-get($background-colors, 'normal'),
+);
+
+$profile-card-content-padding: rhythm(1);
+
+$profile-card-message-height: rhythm(5.5);
+$profile-card-message-color: color('gray');
+
+
+.#{$namespace}-profile__cards {
+  width: 990px;
+  height: 100%;
+  margin: 0 auto;
+
+  .#{$namespace}-profile-card {
+    float: left;
+    margin: 15px;
+  }
+}
+
+
+.#{$namespace}-profile-card {
+  @include set-border($profile-card-border);
+  @include set-background($profile-card-background);
+
+  display: flex;
+  flex-direction: column;
+  width: $profile-card-width;
+  height: $profile-card-height;
+  box-shadow: $profile-card-box-shadow;
+
+  &--center {
+    .#{$namespace}-profile-card__content {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__header {
+    @include set-border($profile-card-header-border);
+
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    height: $profile-card-header-height;
+    padding: $profile-card-header-padding;
+    color: $profile-card-header-color;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    display: flex;
+    padding: $profile-card-content-padding;
+    overflow: hidden;
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: $profile-card-message-height;
+    margin: 0;
+    text-align: center;
+    color: $profile-card-message-color;
+  }
+}
+
+
+@include responsive('medium', 'small') {
+  .#{$namespace}-profile__cards {
+    .#{$namespace}-profile-card {
+      width: 100%;
+      margin: 0;
+    }
+
+    .#{$namespace}-profile-card + .#{$namespace}-profile-card {
+      margin: rhythm(1) 0 0 0;
+    }
+  }
+}
+
+
+@include responsive('medium') {
+  .#{$namespace}-profile__cards {
+    width: 620px;
+  }
+}
+
+
+@include responsive('small') {
+  .#{$namespace}-profile__cards {
+    width: 100%;
+  }
+}
+

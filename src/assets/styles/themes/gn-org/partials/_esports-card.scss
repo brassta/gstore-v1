@@ -1,0 +1,57 @@
+///
+/// Competition card list
+///
+
+
+.#{$namespace}-competition-cards {
+  position: relative;
+  width: $esports-competitions-width;
+  margin: 0 auto;
+
+
+  &[aria-busy="true"] {
+    overflow: visible;
+
+    .#{$namespace}-competition-cards__content {
+      opacity: 0;
+    }
+
+    .#{$namespace}-competition-cards__placeholders {
+      > .#{$namespace}-card {
+        animation: pulsate 1.5s infinite ease-in-out;
+      }
+    }
+  }
+
+
+  &[aria-busy="false"] {
+    overflow: hidden;
+
+    .#{$namespace}-competition-cards__content {
+      opacity: 1;
+    }
+
+    .#{$namespace}-competition-cards__placeholders {
+      opacity: 0;
+    }
+  }
+
+
+  &__content,
+  &__placeholders {
+    transition: opacity 0.4s ease-in-out;
+  }
+
+
+  &__content {
+    overflow: hidden;
+    z-index: $esports-competition-card-z-index;
+  }
+
+
+  &__placeholders {
+    position: absolute;
+    top: 0;
+    z-index: $esports-competition-card-placeholder-z-index;
+  }
+}

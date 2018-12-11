@@ -1,0 +1,17 @@
+$badge-size: rhythm(1);
+$badge-margin: 0;
+$badge-padding: 0 8px;
+$badge-font-size: map-get($font-sizes, 'tiny');
+$badge-font-weight: 400;
+$badge-text-transform: uppercase;
+$badge-color: map-get($text-colors, 'normal');
+$badge-shadow: inset 0 0 0 1px color(black, alpha, 10);
+$badge-background: map-get($background-colors, 'success');
+$badge-active-background: map-get($background-colors, 'success');
+$badge-inactive-background: color('gray');
+$badge-radius: rhythm(.5);
+$badge-spacing: 12px;
+
+$badge-small-size: rhythm(.75);
+$badge-small-margin: rhythm(.125) 0;
+$badge-small-padding: 0 5px;

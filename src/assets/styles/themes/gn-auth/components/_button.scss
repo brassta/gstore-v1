@@ -1,0 +1,516 @@
+///
+/// components/button.scss
+///
+$button-margin: rhythm(.125) 0;
+$button-padding: .5 20px .5 20px;
+$button-spacing: 12px;
+$button-font-weight: 500;
+$button-transition: all .15s ease-in-out 0s;
+$button-text-color: map-get($text-colors, 'button');
+$button-text-shadow: none;
+$button-border: (
+  side: all,
+  width: $default-rhythm-border-width,
+  radius: $default-border-radius,
+  color: map-get($border-colors, 'button')
+);
+
+$button-small-height: rhythm(1);
+$button-small-margin: 0;
+$button-small-padding: 0 10px;
+$button-small-border: (
+  width: $default-rhythm-border-width
+);
+
+$button-large-height: rhythm(2.25);
+$button-large-font-size: map-get($font-sizes, 'large');
+$button-large-margin: rhythm(.375) 0;
+$button-large-padding: rhythm(.625) 35px;
+$button-large-border: (
+  width: $default-rhythm-border-width
+);
+
+$button-ghost-color: map-get($text-colors, 'opaque');
+$button-ghost-hover-color: map-get($text-colors, 'bright');
+
+$button-icon-size: rhythm(2);
+$button-small-icon-size: rhythm(1);
+$button-large-icon-size: rhythm(2.25);
+
+$button-colors: (
+  primary: (
+    default: (
+      normal: (
+        text:       $button-text-color,
+        background: map-get($background-colors, 'button'),
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       $button-text-color,
+        background: color('orange', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       $button-text-color,
+        background: color('orange', 'alpha', 80),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       $button-text-color,
+        background: color('orange', 'alpha', 80),
+        border:     transparent,
+      ),
+    ),
+
+    success: (
+      normal: (
+        text:       $button-text-color,
+        background: color('green'),
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       $button-text-color,
+        background: color('green', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       $button-text-color,
+        background: color('green', 'dark', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       $button-text-color,
+        background: color('green', 'dark', 10),
+        border:     transparent,
+      ),
+    ),
+
+    warning: (
+      normal: (
+        text:       $button-text-color,
+        background: color('yellow'),
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       $button-text-color,
+        background: color('yellow', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       $button-text-color,
+        background: color('yellow', 'dark', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       $button-text-color,
+        background: color('yellow', 'dark', 10),
+        border:     transparent,
+      ),
+    ),
+
+    alert: (
+      normal: (
+        text:       $button-text-color,
+        background: color('red'),
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       $button-text-color,
+        background: color('red', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       $button-text-color,
+        background: color('red', 'dark', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       $button-text-color,
+        background: color('red', 'dark', 10),
+        border:     transparent,
+      ),
+    ),
+
+    info: (
+      normal: (
+        text:       $button-text-color,
+        background: color('blue'),
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       $button-text-color,
+        background: color('blue', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       $button-text-color,
+        background: color('blue', 'dark', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       $button-text-color,
+        background: color('blue', 'dark', 10),
+        border:     transparent,
+      ),
+    ),
+
+    inverse: (
+      normal: (
+        text:       color('white'),
+        background: color('black'),
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       color('white'),
+        background: color('black', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       color('white'),
+        background: color('black', 'alpha', 90),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       color('white'),
+        background: color('black', 'alpha', 90),
+        border:     transparent,
+      ),
+    ),
+  ),
+
+  secondary: (
+    default: (
+      normal: (
+        text:       color('orange'),
+        background: transparent,
+        border:     color('orange'),
+      ),
+
+      disabled: (
+        text:       color('orange', 'alpha', 40),
+        background: transparent,
+        border:     color('orange', 'alpha', 40),
+      ),
+
+      hover: (
+        text:       color('white'),
+        background: color('orange'),
+        border:     color('orange'),
+      ),
+
+      pressed: (
+        text:       color('orange', 'alpha', 80),
+        background: transparent,
+        border:     color('orange', 'alpha', 80),
+      ),
+    ),
+
+    success: (
+      normal: (
+        text:       color('green'),
+        background: transparent,
+        border:     color('green'),
+      ),
+
+      disabled: (
+        text:       color('green', 'alpha', 40),
+        background: transparent,
+        border:     color('green', 'alpha', 40),
+      ),
+
+      hover: (
+        text:       color('white'),
+        background: color('green'),
+        border:     color('green'),
+      ),
+
+      pressed: (
+        text:       color('green', 'alpha', 80),
+        background: transparent,
+        border:     color('green', 'alpha', 80),
+      ),
+    ),
+
+    warning: (
+      normal: (
+        text:       color('yellow'),
+        background: transparent,
+        border:     color('yellow'),
+      ),
+
+      disabled: (
+        text:       color('yellow', 'alpha', 40),
+        background: transparent,
+        border:     color('yellow', 'alpha', 40),
+      ),
+
+      hover: (
+        text:       color('white'),
+        background: color('yellow'),
+        border:     color('yellow'),
+      ),
+
+      pressed: (
+        text:       color('yellow', 'alpha', 80),
+        background: transparent,
+        border:     color('yellow', 'alpha', 80),
+      ),
+    ),
+
+    alert: (
+      normal: (
+        text:       color('red'),
+        background: transparent,
+        border:     color('red'),
+      ),
+
+      disabled: (
+        text:       color('red', 'alpha', 40),
+        background: transparent,
+        border:     color('red', 'alpha', 40),
+      ),
+
+      hover: (
+        text:       color('white'),
+        background: color('red'),
+        border:     color('red'),
+      ),
+
+      pressed: (
+        text:       color('red', 'alpha', 80),
+        background: transparent,
+        border:     color('red', 'alpha', 80),
+      ),
+    ),
+
+    info: (
+      normal: (
+        text:       color('blue'),
+        background: transparent,
+        border:     color('blue'),
+      ),
+
+      disabled: (
+        text:       color('blue', 'alpha', 40),
+        background: transparent,
+        border:     color('blue', 'alpha', 40),
+      ),
+
+      hover: (
+        text:       color('white'),
+        background: color('blue'),
+        border:     color('blue'),
+      ),
+
+      pressed: (
+        text:       color('blue', 'alpha', 80),
+        background: transparent,
+        border:     color('blue', 'alpha', 80),
+      ),
+    ),
+
+    inverse: (
+      normal: (
+        text:       color('black'),
+        background: transparent,
+        border:     color('black'),
+      ),
+
+      disabled: (
+        text:       color('black', 'alpha', 40),
+        background: transparent,
+        border:     color('black', 'alpha', 40),
+      ),
+
+      hover: (
+        text:       color('white'),
+        background: color('black'),
+        border:     color('black'),
+      ),
+
+      pressed: (
+        text:       color('white'),
+        background: color('black'),
+        border:     color('black'),
+      ),
+    ),
+  ),
+
+  tertiary: (
+    default: (
+      normal: (
+        text:       color('orange'),
+        background: transparent,
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       color('orange', 'alpha', 40),
+        background: color('black', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       color('orange'),
+        background: color('orange', 'alpha', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       color('orange'),
+        background: color('orange', 'alpha', 10),
+        border:     transparent,
+      ),
+    ),
+
+    success: (
+      normal: (
+        text:       color('green'),
+        background: transparent,
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       color('green', 'alpha', 40),
+        background: color('black', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       color('green'),
+        background: color('green', 'alpha', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       color('green'),
+        background: color('green', 'alpha', 10),
+        border:     transparent,
+      ),
+    ),
+
+    warning: (
+      normal: (
+        text:       color('yellow'),
+        background: transparent,
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       color('yellow', 'alpha', 40),
+        background: color('black', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       color('yellow'),
+        background: color('yellow', 'alpha', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       color('yellow'),
+        background: color('yellow', 'alpha', 10),
+        border:     transparent,
+      ),
+    ),
+
+    alert: (
+      normal: (
+        text:       color('red'),
+        background: transparent,
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       color('red', 'alpha', 40),
+        background: color('black', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       color('red'),
+        background: color('red', 'alpha', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       color('red'),
+        background: color('red', 'alpha', 10),
+        border:     transparent,
+      ),
+    ),
+
+    info: (
+      normal: (
+        text:       color('blue'),
+        background: transparent,
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       color('blue', 'alpha', 40),
+        background: color('black', 'alpha', 40),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       color('blue'),
+        background: color('blue', 'alpha', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       color('blue'),
+        background: color('blue', 'alpha', 10),
+        border:     transparent,
+      ),
+    ),
+
+    inverse: (
+      normal: (
+        text:       color('black'),
+        background: transparent,
+        border:     transparent,
+      ),
+
+      disabled: (
+        text:       color('black', 'alpha', 40),
+        background: color('black', 'alpha', 10),
+        border:     transparent,
+      ),
+
+      hover: (
+        text:       color('black'),
+        background: color('black', 'alpha', 10),
+        border:     transparent,
+      ),
+
+      pressed: (
+        text:       color('black'),
+        background: color('black', 'alpha', 10),
+        border:     transparent,
+      ),
+    ),
+  )
+);
+
+$button-busy-animation: working 5s linear infinite;

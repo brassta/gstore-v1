@@ -1,0 +1,27 @@
+///
+/// components/notifications.scss
+///
+$notification-min-height: rhythm(3);
+$notification-margin: 0;
+$notification-padding: rhythm(1);
+$notification-font-weight: 400;
+$notification-color: map-get($text-colors, 'normal');
+$notification-system-color: map-get($text-colors, 'normal');
+$notification-background: map-get($background-colors, 'window');
+$notification-system-animation: working 5s linear infinite;
+$notification-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+$notification-transition: opacity .15s linear;
+
+$notification-border: none;
+
+$notification-icons: ();
+
+$notification-close: (
+  size: 'small',
+  type: 'ghost',
+  icon: (
+    size: 'tiny',
+    default: svg-url('<svg viewBox="0 0 10 10" width="10" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M8.993 0L5 3.993 1.007 0 0 1.007 3.993 5 0 8.993 1.007 10 5 6.007 8.993 10 10 8.993 6.007 5 10 1.007z" fill="#22243B" fill-rule="evenodd"/></svg>'),
+    inverse: svg-url('<svg width="10" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M8.993 0L5 3.993 1.007 0 0 1.007 3.993 5 0 8.993 1.007 10 5 6.007 8.993 10 10 8.993 6.007 5 10 1.007z" fill="#FFF" opacity=".5" fill-rule="evenodd"/></svg>'),
+  )
+);

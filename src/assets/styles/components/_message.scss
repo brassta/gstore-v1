@@ -1,0 +1,6 @@
+$message-padding: rhythm(1) !default;
+
+
+.#{$namespace}-message {
+  padding: $message-padding;
+}

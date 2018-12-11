@@ -1,0 +1,184 @@
+$dropdown-min-width: 115px !default;
+$dropdown-max-width: 200px !default;
+$dropdown-height: rhythm(1.5) !default;
+$dropdown-margin: rhythm(.25) 0 !default;
+$dropdown-padding: .25 25px .25 10px !default;
+
+$dropdown-background: (
+  color: map-get($background-colors, 'control'),
+  image: svg-url('<svg width="8" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M.938 0L4 3.101 7.063 0 8 .95 4 5 0 .95z" fill="#FFF" fill-rule="evenodd" fill-opacity=".5"/></svg>'),
+  repeat: no-repeat,
+  position: right 10px center,
+  size: 8px 5px
+) !default;
+
+$dropdown-border: (
+  width: 1px,
+  style: solid,
+  color: transparent,
+  radius: $default-border-radius
+) !default;
+
+$dropdown-box-shadow: inset 0 0 5px 0 rgba(0,0,0, .2) !default;
+
+$dropdown-hover-border-color: transparent !default;
+
+$dropdown-menu-margin: 0 !default;
+$dropdown-menu-padding: 0 !default;
+
+$dropdown-option-menu-background: (
+  color: map-get($background-colors, 'window')
+) !default;
+
+$dropdown-option-height: rhythm(1.5) !default;
+$dropdown-option-padding: rhythm(.25) 10px !default;
+$dropdown-option-background-color: map-get($background-colors, 'control') !default;
+$dropdown-option-active-background-color: map-get($background-colors, 'selected') !default;
+$dropdown-option-color: map-get($text-colors, 'normal') !default;
+$dropdown-option-active-color: map-get($text-colors, 'hover') !default;
+$dropdown-option-hover-background-color: map-get($text-colors, 'hover') !default;
+
+$dropdown-separator-margin: rhythm(.5) 0 !default;
+$dropdown-separator-color: map-get($border-colors, 'normal') !default;
+
+$dropdown-inline-title-color: map-get($text-colors, 'normal') !default;
+$dropdown-inline-background: (
+  color: transparent,
+  image: svg-url('<svg width="8" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M.938 0L4 3.101 7.063 0 8 .95 4 5 0 .95z" fill="#FFF" fill-rule="evenodd" fill-opacity=".5"/></svg>'),
+  repeat: no-repeat,
+  position: right 0 center,
+  size: 8px 5px
+) !default;
+
+
+%dropdown {
+  @include set-border($dropdown-border, $dropdown-padding);
+  @include set-background($dropdown-background);
+
+  display: inline-flex;
+  min-height: $dropdown-height;
+  margin: $dropdown-margin;
+  line-height: $base-line-height;
+  box-shadow: $dropdown-box-shadow;
+  text-align: left;
+  height: $dropdown-height;
+
+  &:hover {
+    border-color: $dropdown-hover-border-color;
+  }
+}
+
+
+.#{$namespace}-dropdown {
+  position: relative;
+  //min-width: $dropdown-min-width;
+  max-width: $dropdown-max-width;
+  cursor: pointer;
+
+
+  > [role="button"] {
+    @extend %dropdown;
+
+    width: 100%;
+
+    &:focus {
+      @include focus(null);
+    }
+
+    &[aria-expanded="true"] + [role="menu"] {
+      display: block;
+    }
+  }
+
+
+  > [role="menu"] {
+    @include set-background($dropdown-option-menu-background);
+
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    margin: $dropdown-menu-margin;
+    padding: $dropdown-menu-padding;
+    min-width: $dropdown-min-width;
+    max-width: $dropdown-max-width;
+
+    > [role="presentation"] {
+      margin: 0;
+      padding: 0;
+
+      &:hover {
+        background-color: $dropdown-option-hover-background-color;
+      }
+
+      &.active {
+        background-color: $dropdown-option-active-background-color; 
+      }
+
+      > [role="menuitem"] {
+        display: inline-block;
+        width: 100%;
+        height: $dropdown-option-height;
+        padding: $dropdown-option-padding;
+        text-decoration: none;
+        color: $dropdown-option-color;
+        background-color: $dropdown-option-background-color;
+
+        &:hover {
+          color: $dropdown-option-active-color;
+        }
+      }
+    }
+
+    > [role="separator"] {
+      height: 1px;
+      margin: $dropdown-separator-margin;
+      padding: 0;
+      background-color: $dropdown-separator-color;
+    }
+  }
+
+
+  &--right {
+    right: 0;
+  }
+
+
+  &--full {
+    > [role="button"],
+    > [role="menu"] {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+
+  &--icon {
+    > [role="button"] {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+
+
+  &--inline {
+    display: inline-flex;
+    max-width: unset;
+
+    > [role="button"] {
+      @include set-background($dropdown-inline-background);
+
+      width: auto;
+      max-width: unset;
+      height: rhythm(1);
+      min-height: rhythm(1);
+      margin: 0;
+      padding: 0 20px 0 0;
+      color: $dropdown-inline-title-color;
+      border: 0;
+      box-shadow: none;
+    }
+  }
+}

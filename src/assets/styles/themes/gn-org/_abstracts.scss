@@ -1,0 +1,208 @@
+@import '../../abstracts/namespace';
+@import '../../abstracts/functions';
+@import '../../abstracts/mixins';
+
+
+///
+/// abstracts/colors.scss
+///
+
+$palette-configuration: (
+  shades: (
+    'alpha-5':    .05, // 5% opacity
+    'alpha-10':   .1,  // 10% opacity
+    'alpha-20':   .2,
+    'alpha-30':   .3,
+    'alpha-40':   .4,
+    'alpha-50':   .5,
+    'alpha-60':   .6,
+    'alpha-70':   .7,
+    'alpha-80':   .8,
+    'alpha-90':   .9,  // 90% opacity
+    'dark-90':  -90%,  // extra dark
+    'dark-80':  -80%,
+    'dark-70':  -70%,
+    'dark-60':  -60%,
+    'dark-50':  -50%,
+    'dark-40':  -40%,
+    'dark-30':  -30%,
+    'dark-20':  -20%,
+    'dark-10':  -10%,
+    'dark-5':   -5%,  // little dark
+    'light-5':   5%,  // little light
+    'light-10':  10%,
+    'light-20':  20%,
+    'light-30':  30%,
+    'light-40':  40%,
+    'light-50':  50%,
+    'light-60':  60%,
+    'light-70':  70%,
+    'light-80':  80%,
+    'light-90':  90%,  // extra light
+  ),
+
+  predefined: (
+    'brand':      #F26122,
+    'gold':       #FBB03B,
+    'primary':    #111020,
+    'secondary':  #23203C,
+    'tertiary':   #22243B,
+    'quaternary': #474A6D,
+  ),
+
+  colors: (
+    'black':      #111020,
+    'white':      #FFFFFF,
+    'red':        #F03E3E,
+    'orange':     #F26122,
+    'yellow':     #F59F00,
+    'green':      #37B24D,
+    'cyan':       #72C1FD,
+    'blue':       #1C7ED6,
+    'gray':       #7F8FA4,
+  )
+);
+
+
+@import '../../abstracts/colors';
+
+
+///
+/// abstracts/variables.scss
+///
+
+$base-font-size: 14px;
+$base-line-height: 20px;
+
+
+$h1-font-size: 24px;
+$h2-font-size: 20px;
+$h3-font-size: 18px;
+$h4-font-size: 16px;
+$h5-font-size: 12px;
+$h6-font-size: 10px;
+
+
+$font-sizes: (
+  tiny: 10px,
+  small: 12px,
+  normal: $base-font-size,
+  large: 16px,
+  huge: 48px,
+  giant: 64px,
+  h1: $h1-font-size,
+  h2: $h2-font-size,
+  h3: $h3-font-size,
+  h4: $h4-font-size,
+  h5: $h5-font-size,
+  h6: $h6-font-size
+);
+
+
+$text-colors: (
+  'normal':   color('white'),
+  'alt':      color('gray'),
+  'dark':     color('white', 'alpha', 40),
+  'light':    color('white', 'alpha', 60),
+  'bright':   color('white', 'alpha', 80),
+  'inverse':  color('black'),
+
+  'active':   color('cyan'),
+  'opaque':   color('white', 'alpha', 20),
+
+  'link':     color('cyan'),
+  'hover':    color('cyan'),
+  'button':   color('white'),
+
+  'alert':    color('red'),
+  'error':    color('red'),
+  'warning':  color('yellow'),
+  'success':  color('green'),
+  'info':     color('blue'),
+);
+
+
+$background-colors: (
+  'normal':       color('primary'),
+  'window':       color('primary'),
+  'body':         color('tertiary'),
+  'control':      color('black', 'alpha', 40),
+
+  'button':       color('orange'),
+  'selected':     color('cyan'),
+  'hover':        color('cyan'),
+
+  'primary':      color('orange'),
+  'default':      color('orange'),
+  'success':      color('green'),
+  'error':        color('red'),
+  'alert':        color('red'),
+  'warning':      color('yellow'),
+  'info':         color('cyan'),
+);
+
+
+$border-colors: (
+  'dark':     color('primary'),
+  'normal':   color('primary', 'alpha', 80),
+  'light':    color('primary', 'alpha', 40),
+
+  'input':    color('primary', 'alpha', 80),
+  'button':   color('orange'),
+  'inverse':  color('white'),
+  'selected': color('yellow'),
+  'hover':    color('yellow'),
+
+  'primary':  color('orange'),
+  'alert':    color('red'),
+  'error':    color('red'),
+  'warning':  color('yellow'),
+  'success':  color('green'),
+  'info':     color('cyan'),
+);
+
+
+$social-profiles-colors: (
+  'vimeo': #4ebbff,
+  'twitter': #1ea1f2,
+  'linkedin': #007bb6,
+  'facebook': #3a5998,
+  'pinterest': #bd061d,
+  'googleplus': #e0483a,
+  'instagram': #cd486b,
+);
+
+
+$breakpoints: (
+  'small': (min-width: 320px, max-width: 767px),
+  'medium': (min-width: 768px, max-width: 1279px),
+  'large': (min-width: 1280px),
+);
+
+
+$application: (
+  titlebar: (
+    height: 1,
+  ),
+
+  header: (
+    height: 3.5,
+  ),
+
+  background: (
+    image: linear-gradient(0deg, #272543 0%, #111020 100%),
+  ),
+
+  scrollbar: (
+    size: 9px,
+  ),
+
+  text: (
+    color: map-get($text-colors, 'normal'),
+  ),
+);
+
+
+// Order matters!
+@import '../../abstracts/variables';
+@import '../../abstracts/animations';

@@ -1,0 +1,18 @@
+$gauge-size: 8; // in vertical rhythms
+$gauge-filter: drop-shadow(0 0px 5px #72C1FD);
+$gauge-color: color('cyan');
+$gauge-background: color('black');
+$gauge-props: (
+  width: #{$gauge-size * strip-unit($base-line-height)},
+  height: #{$gauge-size * strip-unit($base-line-height)},
+  color: #{$gauge-color},
+  background: #{$gauge-background},
+);
+
+
+@include create-global('gauge', $gauge-props);
+
+
+.#{$namespace}-gauge {
+  filter: $gauge-filter;
+}

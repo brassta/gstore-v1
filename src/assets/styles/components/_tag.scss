@@ -1,0 +1,107 @@
+$tag-height: rhythm(1) !default;
+$tag-margin: 0 !default;
+$tag-padding: 0 10px 0 10px !default;
+$tag-spacing: 5px !default;
+$tag-font-size: map-get($font-sizes, 'tiny') !default;
+$tag-font-weight: 500 !default;
+$tag-text-transform: uppercase !default;
+$tag-text-color: map-get($text-colors, 'dark') !default;
+$tag-background: color('tertiary', 'alpha', 20) !default;
+$tag-border: (
+  width: 0,
+  color: transparent,
+  radius: 4px
+) !default;
+
+$tag-colors: (
+  success: (
+    text:       map-get($text-colors, 'success'),
+    background: color('green', 'alpha', 10),
+    border:     transparent,
+  ),
+
+  warning: (
+    text:       map-get($text-colors, 'warning'),
+    background: color('orange', 'alpha', 10),
+    border:     transparent,
+  ),
+
+  alert: (
+    text:       map-get($text-colors, 'alert'),
+    background: color('red', 'alpha', 10),
+    border:     transparent,
+  ),
+
+  info: (
+    text:       map-get($text-colors, 'info'),
+    background: color('cyan', 'alpha', 10),
+    border:     transparent,
+  ),
+
+  active: (
+    text:       map-get($text-colors, 'hover'),
+    background: color('blue', 'alpha', 10),
+    border:     transparent,
+  ),
+) !default;
+
+
+/// Tag functions and mixins
+
+@mixin coloured-tag($color: 'default') {
+  color: map-deep-get($tag-colors, $color, 'text');
+  background-color: map-deep-get($tag-colors, $color, 'background');
+  border-color: map-deep-get($tag-colors, $color, 'border');
+}
+
+
+.#{$namespace}-tag {
+  @include set-border($tag-border, $tag-padding);
+  @include set-background($tag-background);
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: $tag-height;
+  margin: $tag-margin;
+
+  font-size: $tag-font-size;
+  font-weight: $tag-font-weight;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-transform: $tag-text-transform;
+  color: $tag-text-color;
+
+  & + & {
+    margin-left: $tag-spacing;
+  }
+
+  &--success {
+    @include coloured-tag('success');
+  }
+
+  &--warning {
+    @include coloured-tag('warning');
+  }
+
+  &--alert {
+    @include coloured-tag('alert');
+  }
+
+  &--info {
+    @include coloured-tag('info');
+  }
+
+  &--active {
+    @include coloured-tag('active');
+  }
+}
+
+
+

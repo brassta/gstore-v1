@@ -1,0 +1,24 @@
+///
+/// components/loader.scss
+///
+$loader-width: rhythm(4);
+$loader-height: rhythm(1);
+$loader-margin: rhythm(1) auto;
+$loader-z-index: 1;
+$loader-background: transparent;
+$loader-animation: loader 1.4s infinite ease-in-out both;
+$loader-dot-width: 18px;
+$loader-dot-height: 18px;
+$loader-dot-color: map-get($background-colors, 'primary');
+
+$loader-small-width: rhythm(3);
+$loader-small-height: rhythm(1);
+$loader-small-margin: 0 auto;
+$loader-small-dot-width: 9px;
+$loader-small-dot-height: 9px;
+
+$loader-textual-spacing: 1px;
+$loader-textual-animation: blink 1.4s infinite ease-in-out both;
+
+$loader-buggy-height: rhythm(.25);
+$loader-buggy-margin: rhythm(.375) auto;

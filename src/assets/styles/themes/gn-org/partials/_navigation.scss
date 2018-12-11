@@ -1,0 +1,90 @@
+$navigation-width: 100%;
+$navigation-margin: 0;
+$navigation-padding: rhythm(1) 0;
+
+$navigation-item-height: rhythm(2.5);
+$navigation-item-padding: rhythm(.75) rhythm(1.5);
+$navigation-item-font-size: map-get($font-sizes, 'large');
+$navigation-item-font-weight: 500;
+$navigation-item-color: map-get($text-colors, 'normal');
+$navigation-item-transition: all 100ms ease-in-out;
+$navigation-item-selected-background: ();
+
+
+.#{$namespace}-navigation {
+  flex: 1 1 auto;
+  top: 0;
+  left: 0;
+  width: $navigation-width;
+  margin: $navigation-margin;
+  padding: $navigation-padding;
+  z-index: 2;
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__submenu {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+.#{$namespace}-navigation__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  height: $navigation-item-height;
+  margin: 0;
+  padding: $navigation-item-padding;
+
+  cursor: pointer;
+  font-size: $navigation-item-font-size;
+  font-weight: $navigation-item-font-weight;
+  transition: $navigation-item-transition;
+
+  &:hover {
+
+  }
+
+  &--main {
+
+  }
+
+  &--selected {
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 3px;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(0deg, #FAA728 0%, #F26122 100%);
+    }
+  }
+}
+
+
+@include responsive('small', 'medium') {
+  .#{$namespace}-navigation {
+    flex: 0 0 auto;
+    padding: 0;
+
+    &__item {
+      height: rhythm(3);
+      padding: rhythm(1);
+      font-weight: 300;
+      color: map-get($text-colors, 'light');
+
+      &--selected {
+        color: map-get($text-colors, 'normal');
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+$avatar-color: map-get($text-colors, 'link');
+$avatar-size: 48px;
+$panel-background-color: #111020;
+$panel-arrow-size: rhythm(.5);
+
+.#{$namespace}-account-settings {
+
+  &__panel {
+    padding-top: $header-height;
+    position: absolute;
+    width: rhythm(15);
+    z-index: 2;
+    top: -3px;
+    right: 0;
+    background-color: color("gray");
+    box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  nav {
+
+    ul {
+
+      padding: rhythm(1) 0 0 0;
+
+      li {
+
+        padding: 0 rhythm(1) 0 rhythm(1);
+        &.separator {
+          border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+      }
+
+      .gc-link {
+        // should move this to a class .nav-link or smth
+        color: #fff;
+        opacity: 0.7;
+        transition: opacity 100ms ease-in-out;
+
+        &:hover {
+          color: #fff;
+          box-shadow: none;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.is-open {
+    // arrow
+    &:before {
+      @include triangle('top', $panel-background-color, $panel-arrow-size);
+
+      position: absolute;
+      right: rhythm(1.25);
+      top: $header-height;
+      margin-top: -$panel-arrow-size;
+      z-index: 5;
+    }
+  }
+}

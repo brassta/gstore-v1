@@ -1,0 +1,78 @@
+$stacking-container-placement: top !default;
+$stacking-container-width: 100% !default;
+$stacking-container-margin: 0 !default;
+$stacking-container-padding: rhythm(1) !default;
+$stacking-container-z-index: 2000 !default;
+$stacking-container-spacing: 0 !default;
+
+$stacking-container-wrapper-width: 100% !default;
+$stacking-container-wrapper-alignment: flex-end !default;
+
+
+.#{$namespace}-stacking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  position: absolute;
+  width: $stacking-container-width;
+  margin: 0;
+  padding: 0;
+  z-index: $stacking-container-z-index;
+
+  @if $stacking-container-placement == top {
+    top: 0;
+  }
+  @else {
+    bottom: 0;
+  }
+
+
+  &--reverse {
+    flex-direction: column-reverse;
+  }
+
+
+  > .#{$namespace}-announcement,
+  > .#{$namespace}-notification {
+    &:first-of-type {
+      margin-bottom: $stacking-container-margin;
+    }
+  }
+
+
+  .#{$namespace}-transition {
+    &:first-of-type {
+      margin-bottom: $stacking-container-margin / 2;
+    }
+
+    + .#{$namespace}-transition {
+      margin: 0;
+    }
+  }
+
+
+  .#{$namespace}-announcement,
+  .#{$namespace}-notification {
+    display: flex;
+    justify-content: $stacking-container-wrapper-alignment;
+    margin-left: $stacking-container-margin;
+    margin-right: $stacking-container-margin;
+  }
+
+  .#{$namespace}-announcement {
+    width: $stacking-container-wrapper-width;
+
+    + .#{$namespace}-announcement {
+      margin-bottom: $stacking-container-spacing;
+    }
+  }
+
+  .#{$namespace}-notification--full {
+    width: $stacking-container-wrapper-width;
+  }
+
+  .#{$namespace}-notification + .#{$namespace}-notification {
+    margin-bottom: $stacking-container-spacing;
+  }
+}

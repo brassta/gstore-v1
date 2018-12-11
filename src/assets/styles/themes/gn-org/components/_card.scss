@@ -1,0 +1,354 @@
+///
+/// components/card.scss
+///
+
+
+$card-width: 300px;
+$card-height: rhythm(17.5);
+$card-margin: 0;
+$card-spacing: rhythm(1);
+$card-background: (
+  color: color('quaternary'),
+  image: linear-gradient(135deg, #474A6D 0%, #22243B 100%),
+);
+$card-border: (
+  width: 1px,
+  style: solid,
+  color: rgba(255, 255, 255, .1),
+  radius: 4px,
+);
+
+$card-cover-height: rhythm(9.5);
+$card-cover-background: color('black');
+$card-overlay-background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+
+$card-caption-position: (bottom, right);
+$card-caption-offset: rhythm(1);
+$card-caption-font-size: map-get($font-sizes, 'tiny');
+
+$card-title-font-size: map-get($font-sizes, 'h3');
+$card-label-font-size: map-get($font-sizes, 'small');
+$card-label-color: map-get($text-colors, 'normal');
+$card-label-color-alt: map-get($text-colors, 'alt');
+$card-value-font-size: map-get($font-sizes, 'h4');
+$card-value-color: map-get($text-colors, 'normal');
+
+$card-header-padding: rhythm(1);
+$card-header-border: (
+  side: 'bottom',
+  width: 1px,
+  style: solid,
+  color: color('white', 'alpha', 10),
+);
+$card-box-shadow: 0 2px 8px 0 #11171F;
+$card-content-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4), 0 0 120px 40px rgba(255, 255, 255, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+
+$card-status-position: (top, right);
+$card-status-offset: rhythm(1);
+
+$card-details-padding: rhythm(1);
+
+$card-full-height: rhythm(4);
+$card-full-padding: rhythm(.5) rhythm(1);
+$card-full-title-top: rhythm(1) 0 0 0;
+$card-full-title-font-size: map-get($font-sizes, 'h4');
+$card-full-value-font-size: map-get($font-sizes, 'h4');
+$card-full-background: linear-gradient(135deg, #474A6D 0%, #22243B 100%);
+$card-full-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4), 0 0 120px 40px rgba(255, 255, 255, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+$card-full-cover-width: 80px;
+$card-full-cover-height: rhythm(2.5);
+$card-full-content-margin: 0 0 0 30px;
+$card-full-header-width: 40%;
+$card-full-status-top: rhythm(.5);
+$card-full-status-right: rhythm(.5);
+
+
+///
+/// Generates responsive card container widths
+///
+/// @param {number} $width Single card width
+/// @param {number} $min Min number of cards per container
+/// @param {number} $max Max number of cards per container
+/// @param {number} $padding Container padding
+/// @param {number} $spacing Spacing between cards
+///
+@mixin card-widths($width, $min: 1, $max: 3, $spacing: 1, $padding: 1) {
+  $width: to-lines(if($width, $width, 15));
+  $scrollbar: to-lines(map-deep-get($application, scrollbar, size));
+  $padding: to-lines($padding);
+  $spacing: to-lines($spacing);
+
+  @for $i from $min through $max {
+    $cards: $i * $width + ($i - 1) * $spacing;
+    $total: ceil($cards + 2 * $padding + $scrollbar);
+
+    @media (min-width: to-px(rhythm($total))) {
+      width: rhythm($total);
+    }
+  }
+}
+
+
+///
+/// Sets the position of an element relative to its parent
+///
+/// @param {list|string} $position One or more of the following values: top, right, bottom, left
+/// @param {number} $offset Value to set position to
+///
+@mixin set-position($position, $offset) {
+  @if type-of($position) == 'list' {
+    @each $side in $position {
+      @if not index((top, right, bottom, left), $side) {
+        @error 'Wrong position modifier.';
+      }
+
+      #{$side}: $offset;
+    }
+  } @else {
+    @if not index((top, right, bottom, left), $position) {
+      @error 'Wrong position modifier.';
+    }
+
+    #{$position}: $offset;
+  }
+}
+
+
+.#{$namespace}-cards {
+
+}
+
+
+.#{$namespace}-card {
+  @include set-background($card-background);
+  @include set-border($card-border);
+
+  display: flex;
+  flex-direction: column;
+
+  width: $card-width;
+  height: $card-height;
+  margin: $card-margin;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: $card-box-shadow;
+
+
+  &__cover {
+    @include set-radius(map-get($card-border, radius), top);
+    @include set-background($card-cover-background);
+
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+    height: $card-cover-height;
+    background: black;
+    overflow: hidden;
+
+    &::before {
+      @include set-background($card-overlay-background);
+
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__caption {
+    @include set-position($card-caption-position, $card-caption-offset);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: rhythm(1);
+    text-transform: uppercase;
+    font-weight: bold;
+    background: linear-gradient(322.89deg, #FAA728 0%, #F26122 100%);
+    color: color(white);
+    transform: rotate(45deg) translate(35px, 0px);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+
+    .#{$namespace}-card__info {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: $card-caption-font-size;
+
+      .#{$namespace}-card__label {
+        font-size: inherit;
+      }
+
+      .#{$namespace}-card__value {
+        display: none;
+      }
+    }
+  }
+
+
+  &__content {
+    flex: 1 1 auto;
+    box-shadow: $card-content-box-shadow;
+  }
+
+  &__info {
+    display: inline-block;
+  }
+
+  &__label {
+    margin: 0;
+    padding: 0;
+    font-size: $card-label-font-size;
+    color: $card-label-color-alt;
+
+    &--white {
+      color: $card-label-color;
+      font-size: $card-caption-font-size;
+    }
+  }
+
+  &__value {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: $card-value-font-size;
+    color: $card-value-color;
+  }
+
+
+  &__header {
+    @include set-border($card-header-border);
+
+    position: relative;
+    padding: $card-header-padding;
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: $card-title-font-size;
+  }
+
+  &__status {
+    @include set-position($card-status-position, $card-status-offset);
+
+    position: absolute;
+    transform: scale(.8);
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    .#{$namespace}-badge {
+      font-weight: bold;
+    }
+  }
+
+
+  &__details {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: $card-details-padding;
+
+    .#{$namespace}-card__info {
+      width: 50%;
+    }
+  }
+
+
+  &__action {
+    display: none;
+  }
+}
+
+
+.#{$namespace}-card--full {
+  flex-direction: row;
+  align-items: center;
+
+  width: 100%;
+  height: $card-full-height;
+  padding: $card-full-padding;
+  cursor: auto;
+
+  background: $card-full-background;
+  border: 0;
+  box-shadow: $card-full-box-shadow;
+
+  .#{$namespace}-card__cover {
+    width: $card-full-cover-width;
+    height: $card-full-cover-height;
+  }
+
+  .#{$namespace}-card__caption {
+    display: none;
+  }
+
+  .#{$namespace}-card__content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: $card-full-content-margin;
+  }
+
+  .#{$namespace}-card__header,
+  .#{$namespace}-card__details,
+  .#{$namespace}-card__info {
+    flex: 1 1 auto;
+    padding: 0;
+  }
+
+  .#{$namespace}-card__header {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    max-width: $card-full-header-width;
+    border: 0;
+  }
+
+  .#{$namespace}-card__details {
+  }
+
+  .#{$namespace}-card__info {
+    position: relative;
+  }
+
+  .#{$namespace}-card__label {
+    display: block;
+  }
+
+  .#{$namespace}-card__title {
+    @include ellipsis;
+
+    position: absolute;
+    left: 0;
+    right: 1em;
+    font-size: $card-full-title-font-size;
+  }
+
+  .#{$namespace}-card__value {
+    font-size: $card-full-value-font-size;
+  }
+
+
+  .#{$namespace}-card__status {
+    top: $card-full-status-top;
+    right: $card-full-status-right;
+  }
+
+  .#{$namespace}-card__action {
+    display: block !important; // TODO@prebla: check this specificator
+  }
+}

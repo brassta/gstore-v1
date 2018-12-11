@@ -1,0 +1,168 @@
+$announcement-min-height: rhythm(2) !default;
+$announcement-margin: 0 !default;
+$announcement-padding: .5 1 .5 1 !default;
+$announcement-font-weight: 400 !default;
+$announcement-color: map-get($text-colors, 'inverse') !default;
+$announcement-background: map-get($background-colors, 'success') !default;
+
+$announcement-border: (
+  side: all,
+  width: 1px,
+  style: solid,
+  color: transparent,
+  radius: 0,
+) !default;
+
+$announcement-icons: (
+  info: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTggMEMzLjU4NCAwIDAgMy41ODQgMCA4czMuNTg0IDggOCA4IDgtMy41ODQgOC04LTMuNTg0LTgtOC04em0uOCAxMkg3LjJWNy4yaDEuNlYxMnptMC02LjRINy4yVjRoMS42djEuNnoiIGZpbGw9IiMyMjI0M0IiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg=='),
+  error: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgOGE4IDggMCAxIDEgMTYgMEE4IDggMCAwIDEgMCA4em05LjMxNSAyLjcxOGEuOTkzLjk5MyAwIDAgMCAxLjQwMy0xLjQwM0w5LjQxIDguMDA3bDEuMzA4LTEuMzA5YS45OTMuOTkzIDAgMCAwLTEuNDAzLTEuNDAzTDguMDA3IDYuNjAzIDYuNjk0IDUuMjkxYS45OTEuOTkxIDAgMSAwLTEuNDAzIDEuNDAzbDEuMzEyIDEuMzEyLTEuMzEyIDEuMzEzYS45OTEuOTkxIDAgMSAwIDEuNDAzIDEuNDAzTDguMDA3IDkuNDFsMS4zMDggMS4zMDh6IiBmaWxsPSIjMjIyNDNCIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4='),
+  success: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTggMGE4IDggMCAxIDEgMCAxNkE4IDggMCAwIDEgOCAwem0tLjU2IDExLjAxbDQuMDctNC4wN2EuOTk5Ljk5OSAwIDEgMC0xLjQxNC0xLjQxNUw2LjczMiA4Ljg5bC0uODI5LS44MjlBMSAxIDAgMCAwIDQuNDkgOS40NzVsMS41MzYgMS41MzVhLjk5OS45OTkgMCAwIDAgMS40MTQgMHoiIGZpbGw9IiMyMjI0M0IiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg=='),
+  warning: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuNzM0IDExSDEyLjE2YTEgMSAwIDAgMCAuODY2LTEuNTAxTDcuODEzLjQ5NWExIDEgMCAwIDAtMS43MzEgMEwuODY5IDkuNDk5QTEgMSAwIDAgMCAxLjczNCAxMXpNNy41OCA5LjEwNUg2LjMxNlY3Ljg0MmgxLjI2M3YxLjI2M3ptMC0yLjUyNkg2LjMxNlY0LjA1M2gxLjI2M3YyLjUyNnoiIGZpbGw9IiMyMjI0M0IiLz48L3N2Zz4='),
+) !default;
+
+$announcement-close: (
+  size: 'small',
+  type: 'ghost',
+  icon: (
+    size: 'tiny',
+    default: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAgMTAiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOC45OTMgMEw1IDMuOTkzIDEuMDA3IDAgMCAxLjAwNyAzLjk5MyA1IDAgOC45OTMgMS4wMDcgMTAgNSA2LjAwNyA4Ljk5MyAxMCAxMCA4Ljk5MyA2LjAwNyA1IDEwIDEuMDA3eiIgZmlsbD0iIzIyMjQzQiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+'),
+    inverse: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTguOTkzIDBMNSAzLjk5MyAxLjAwNyAwIDAgMS4wMDcgMy45OTMgNSAwIDguOTkzIDEuMDA3IDEwIDUgNi4wMDcgOC45OTMgMTAgMTAgOC45OTMgNi4wMDcgNSAxMCAxLjAwN3oiIGZpbGw9IiNGRkYiIG9wYWNpdHk9Ii41IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4='),
+  )
+) !default;
+
+
+@mixin icon-announcement($type: null, $icon: null) {
+  // toast announcement
+  @if $type == null or $type == default {
+    // close icon
+    @if $icon == 'close' {
+      @include icon(map-get(map-get($announcement-close, icon), default), (
+        pseudo: true,
+        size: map-get(map-get($announcement-close, icon), 'size'),
+        cover: true,
+      ));
+    }
+  }
+
+  // coloured announcement
+  @else {
+    // close icon
+    @if $icon == 'close' {
+      @include icon(map-get(map-get($announcement-close, icon), default), (
+        pseudo: true,
+        size: map-get(map-get($announcement-close, icon), 'size'),
+        cover: true,
+      ));
+    }
+    // type icons
+    @else {
+      @include icon(map-get($announcement-icons, $type), (
+        pseudo: true,
+        size: 'large',
+        side: 'left',
+        margin: 1em,
+      ));
+    }
+  }
+
+  &::before {
+    flex: 0 0 auto;
+  }
+}
+
+
+@mixin coloured-announcement($type) {
+  @include icon-announcement($type);
+
+  $color: map-get($text-colors, 'inverse');
+
+  color: $color;
+  background-color: map-get($background-colors, $type);
+  border-color: map-get($border-colors, $type);
+
+  .#{$namespace}-announcement__close {
+    @include icon-announcement($type, 'close');
+
+    color: $color;
+  }
+}
+
+
+.#{$namespace}-announcement {
+  @include component;
+  @include set-border($announcement-border, $announcement-padding);
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  min-height: $announcement-min-height;
+  margin: $announcement-margin;
+  text-align: left;
+  font-weight: $announcement-font-weight;
+  color: $announcement-color;
+  background-color: $announcement-background;
+
+  &[aria-hidden='false'] {
+    @include fade-in;
+  }
+
+  &[aria-hidden='true'] {
+    @include fade-out;
+  }
+}
+
+
+.#{$namespace}-announcement--success {
+  @include coloured-announcement('success');
+}
+
+.#{$namespace}-announcement--warning {
+  @include coloured-announcement('warning');
+}
+
+.#{$namespace}-announcement--error {
+  @include coloured-announcement('error');
+}
+
+.#{$namespace}-announcement--info {
+  @include coloured-announcement('info');
+}
+
+
+.#{$namespace}-announcement__message {
+  flex: 1 1 auto;
+
+  .#{$namespace}-pill,
+  .#{$namespace}-button {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+
+
+.#{$namespace}-announcement__close {
+  @extend .#{$namespace}-button--icon;
+
+  @if map-has-key($announcement-close, type) {
+    @extend .#{$namespace}-button--#{map-get($announcement-close, type)};
+  }
+
+  @if map-has-key($announcement-close, size) {
+    @extend .#{$namespace}-button--#{map-get($announcement-close, size)};
+  }
+
+  @include icon-announcement(default, 'close');
+
+  flex: 0 0 auto;
+  margin-left: 1em;
+  color: $announcement-color;
+
+  &:hover,
+  &:focus {
+    &:not([disabled]),
+    &:not([aria-disabled='true']) {
+      transition: none;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+$footer-margin: 0;
+$footer-padding: 0;
+$footer-text-color: color('gray');
+$footer-text-weight: 600;
+$footer-text-hover-color: color('white');
+$footer-text-size: map_get($font-sizes, small);
+$footer-item-padding: rhythm(.5) rhythm(1.5);
+
+$footer-copyright-margin: rhythm(2) 0 0 0;
+$footer-copyright-padding: rhythm(.5);
+$footer-copyright-text-size: map_get($font-sizes, tiny);
+
+
+.#{$namespace}-footer {
+  flex: 0 0 auto;
+  width: 100%;
+  margin: $footer-margin;
+  padding: $footer-padding;
+  font-size: $footer-text-size;
+  font-weight: $footer-text-weight;
+  color: $footer-text-color;
+
+
+  &__menu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+    &__item {
+      margin: 0;
+      padding: $footer-item-padding;
+      list-style-type: none;
+    }
+
+      &__link {
+        color: $footer-text-color;
+
+        &:hover {
+          color: $footer-text-hover-color;
+          text-decoration: none;
+          border: 0;
+          box-shadow: none;
+        }
+      }
+
+
+  &__copyright {
+    display: block;
+    margin: $footer-copyright-margin;
+    padding: $footer-copyright-padding;
+    font-size: $footer-copyright-text-size;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+
+.#{$namespace}-footer--inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-size: map-get($font-sizes, normal);
+
+
+  .#{$namespace}-footer__menu {
+    order: 2;
+    display: inline;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+    .#{$namespace}-footer__item {
+      display: inline;
+      margin: 0 1ex;
+      padding: 0;
+    }
+
+      .#{$namespace}-footer__link {
+        color: map-get($text-colors, link);
+
+        &:hover {
+          color: $footer-text-hover-color;
+          text-decoration: none;
+          border: 0;
+          box-shadow: none;
+        }
+      }
+
+
+  .#{$namespace}-footer__copyright {
+    order: 1;
+    display: inline;
+    margin: 0 1ex;
+    padding: 0;
+    font-size: inherit;
+  }
+}
+
+
+@include responsive('small', 'medium') {
+  .#{$namespace}-footer {
+    flex: 1 1 auto;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+
+    &__menu {
+      border-top: 1px solid color('white', 'alpha', 10);
+      border-bottom: 1px solid color('white', 'alpha', 10);
+    }
+
+      &__item {
+        height: rhythm(3);
+        padding: rhythm(1) rhythm(1);
+        font-size: map-get($font-sizes, 'large');
+        font-weight: 300;
+      }
+
+        &__link {
+          color: map-get($text-colors, 'light');
+        }
+  }
+}

@@ -1,0 +1,25 @@
+///
+/// components/form-group.scss
+///
+$form-group-min-height: rhythm(1);
+$form-group-margin: 0 0 rhythm(1) 0;
+
+$form-group-large-min-height: rhythm(2);
+$form-group-large-margin: 0 0 rhythm(2) 0;
+
+$form-group-hint-top: rhythm(-1);
+$form-group-hint-padding: 0 0 0 10px;
+$form-group-hint-font-size: map-get($font-sizes, small);
+$form-group-hint-color: map-get($text-colors, 'opaque');
+
+$form-group-help-padding: 0;
+$form-group-help-font-size: map-get($font-sizes, small);
+$form-group-help-color: map-get($text-colors, 'opaque');
+
+$form-group-message-padding: 0 0 0 0;
+$form-group-message-font-size: map-get($font-sizes, small);
+
+$form-group-label-text-size: map-get($font-sizes, 'normal');
+$form-group-label-text-color: map-get($text-colors, 'dark');
+$form-group-label-text-transform: none;
+$form-group-label-text-letter-spacing: 0;

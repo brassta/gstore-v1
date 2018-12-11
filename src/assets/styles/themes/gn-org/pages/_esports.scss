@@ -1,0 +1,51 @@
+$esports-competitions-width: 990px;
+$esports-competitions-padding: 0;
+
+$esports-competitions-current-ladder-card-margin: rhythm(.75) rhythm(.75);
+$esports-competitions-previous-ladder-card-margin: rhythm(.75) 0;
+
+$esports-competition-card-z-index: 2;
+$esports-competition-card-placeholder-z-index: 1;
+$esports-competition-card-shadow-z-index: 0;
+
+$game-finished-stars-background: (
+  image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="308" height="307" viewBox="0 0 308 307"><defs><filter id="a" width="108.3%" height="108.9%" x="-4.2%" y="-4.5%" filterUnits="objectBoundingBox"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4"/><feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.706068841 0"/><feMerge><feMergeNode in="shadowMatrixOuter1"/><feMergeNode in="SourceGraphic"/></feMerge></filter><radialGradient id="b" fx="50%" fy="50%" gradientTransform="matrix(0 1 -.9935 0 .997 0)"><stop offset="0%" stop-color="#FAD961" stop-opacity=".4"/><stop offset="100%" stop-color="#F76B1C" stop-opacity="0"/></radialGradient><path id="d" d="M157.25 50.049c-5.203-1.272-6.023-2.093-7.299-7.299a.98.98 0 0 0-1.907 0c-1.271 5.203-2.088 6.018-7.294 7.294a.98.98 0 0 0 0 1.907c5.202 1.276 6.018 2.093 7.294 7.299a.98.98 0 0 0 1.907 0c1.276-5.203 2.096-6.023 7.299-7.299a.98.98 0 0 0 .75-.953.984.984 0 0 0-.75-.95z"/><filter id="c" width="166.7%" height="166.7%" x="-33.3%" y="-33.3%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.984313725 0 0 0 0 0.690196078 0 0 0 0 0.231372549 0 0 0 1 0"/></filter><path id="f" d="M109.667 137.577c-2.313-.565-2.677-.93-3.244-3.244a.436.436 0 0 0-.848 0c-.565 2.313-.928 2.675-3.242 3.242a.436.436 0 0 0 0 .848c2.312.567 2.675.93 3.242 3.244a.435.435 0 0 0 .848 0c.567-2.313.931-2.677 3.244-3.244a.435.435 0 0 0 0-.846z"/><filter id="e" width="241.7%" height="241.7%" x="-70.8%" y="-70.8%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.984313725 0 0 0 0 0.690196078 0 0 0 0 0.231372549 0 0 0 1 0"/></filter><path id="h" d="M50.667 124.577c-2.313-.565-2.677-.93-3.244-3.244a.436.436 0 0 0-.848 0c-.565 2.313-.928 2.675-3.242 3.242a.436.436 0 0 0 0 .848c2.312.567 2.675.93 3.242 3.244a.435.435 0 0 0 .848 0c.567-2.313.931-2.677 3.244-3.244a.435.435 0 0 0 0-.846z"/><filter id="g" width="241.7%" height="241.7%" x="-70.8%" y="-70.8%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.984313725 0 0 0 0 0.690196078 0 0 0 0 0.231372549 0 0 0 1 0"/></filter><path id="j" d="M109.667 3.577c-2.313-.565-2.677-.93-3.244-3.244a.436.436 0 0 0-.848 0c-.565 2.313-.928 2.675-3.242 3.242a.436.436 0 0 0 0 .848c2.312.567 2.675.93 3.242 3.244a.435.435 0 0 0 .848 0c.567-2.313.931-2.677 3.244-3.244a.435.435 0 0 0 0-.846z"/><filter id="i" width="241.7%" height="241.7%" x="-70.8%" y="-70.8%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.984313725 0 0 0 0 0.690196078 0 0 0 0 0.231372549 0 0 0 1 0"/></filter><path id="l" d="M10.667 83.577c-2.313-.565-2.677-.93-3.244-3.244a.436.436 0 0 0-.848 0c-.565 2.313-.928 2.675-3.242 3.242a.436.436 0 0 0 0 .848c2.312.567 2.675.93 3.242 3.244a.435.435 0 0 0 .848 0c.567-2.313.931-2.677 3.244-3.244a.435.435 0 0 0 0-.846z"/><filter id="k" width="241.7%" height="241.7%" x="-70.8%" y="-70.8%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.984313725 0 0 0 0 0.690196078 0 0 0 0 0.231372549 0 0 0 1 0"/></filter><path id="n" d="M17.25 19.049c-5.203-1.272-6.023-2.093-7.299-7.299a.98.98 0 0 0-1.907 0C6.773 16.953 5.956 17.768.75 19.044a.98.98 0 0 0 0 1.907c5.202 1.276 6.018 2.093 7.294 7.299a.98.98 0 0 0 1.907 0c1.276-5.203 2.096-6.023 7.299-7.299a.98.98 0 0 0 .75-.953.984.984 0 0 0-.75-.95z"/><filter id="m" width="166.7%" height="166.7%" x="-33.3%" y="-33.3%" filterUnits="objectBoundingBox"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.984313725 0 0 0 0 0.690196078 0 0 0 0 0.231372549 0 0 0 1 0"/></filter></defs><g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(-86)"><path fill="url(#b)" d="M147.328 125.357L137.233 0h33.534l-10.095 125.357L210.65 9.842l29.609 15.743-69.582 108.785 99.449-82.283 19.234 27.47-108.732 63.782 123.294-25.318 4.087 33.284-125.842 5.265 120.892 35.571-12.018 31.307-116.495-55.825 93.824 88.712-24.92 22.439-76.488-100.057 40.114 119.169-32.538 8.112L154 181.884l-20.538 124.114-32.538-8.112 40.114-119.169-76.487 100.057-24.921-22.439 93.824-88.712-116.495 55.825L4.94 192.141l120.892-35.57-125.842-5.266 4.087-33.284 123.294 25.318L18.64 79.556l19.234-27.47 99.45 82.284L67.74 25.585 97.35 9.842l49.978 115.515z" opacity=".602" transform="translate(86)"/><g transform="translate(161 77)"><use fill="#000" filter="url(#c)" xlink:href="#d"/><use fill="#FBB03B" xlink:href="#d"/></g><g transform="translate(161 77)"><use fill="#000" filter="url(#e)" xlink:href="#f"/><use fill="#FBB03B" xlink:href="#f"/></g><g transform="translate(161 77)"><use fill="#000" filter="url(#g)" xlink:href="#h"/><use fill="#FBB03B" xlink:href="#h"/></g><g transform="translate(161 77)"><use fill="#000" filter="url(#i)" xlink:href="#j"/><use fill="#FBB03B" xlink:href="#j"/></g><g transform="translate(161 77)"><use fill="#000" filter="url(#k)" xlink:href="#l"/><use fill="#FBB03B" xlink:href="#l"/></g><g transform="translate(161 77)"><use fill="#000" filter="url(#m)" xlink:href="#n"/><use fill="#FBB03B" xlink:href="#n"/></g></g></svg>'),
+  repeat: no-repeat,
+  position: center center
+);
+
+
+$game-finished-trophy-background: (
+  image: $game-coins-background,
+  repeat: no-repeat,
+  position: center center
+);
+
+
+.#{$namespace}-esports {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 0 0 rhythm(1) 0;
+  overflow-y: auto;
+
+  .#{$namespace}-tabs__list {
+    width: $esports-competitions-width;
+    margin: rhythm(1) auto;
+  }
+}
+
+
+@include responsive('small') {
+  .#{$namespace}-esports {
+    .#{$namespace}-tabs__list {
+      width: 100%;
+    }
+  }
+}
+
+
+@import '../partials/esports-card';
+@import '../partials/esports-modal';
+@import '../partials/esports-current-ladder';
+@import '../partials/esports-previous-ladder';

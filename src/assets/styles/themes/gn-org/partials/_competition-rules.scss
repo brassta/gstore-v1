@@ -1,0 +1,14 @@
+.#{$namespace}-competition-rules {
+  height: 100%;
+  min-height: 400px;
+
+  &__content {
+    width: 990px;
+    margin: 0 auto;
+    padding: 0;
+
+    &__title {
+      margin-top: 0;
+    }
+  }
+}

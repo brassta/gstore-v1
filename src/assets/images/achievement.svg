@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="70px" viewBox="0 0 65 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>6062E52A-4D0E-475F-B197-D17F8B3C6757</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="54.254522%" y1="44.8997151%" x2="8.04005168%" y2="100.299715%" id="linearGradient-1">
+            <stop stop-color="#BCBEC0" offset="0%"></stop>
+            <stop stop-color="#58595B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="47.6260982%" y1="46.8806268%" x2="92.9100775%" y2="106.38433%" id="linearGradient-2">
+            <stop stop-color="#BCBEC0" offset="0%"></stop>
+            <stop stop-color="#58595B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="1.23584906%" x2="50%" y2="99.6350404%" id="linearGradient-3">
+            <stop stop-color="#BCBEC0" offset="0%"></stop>
+            <stop stop-color="#58595B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="1.15667656%" x2="50%" y2="99.4203264%" id="linearGradient-4">
+            <stop stop-color="#58595B" offset="0%"></stop>
+            <stop stop-color="#BCBEC0" offset="100%"></stop>
+        </linearGradient>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="50.0939511%" gradientTransform="translate(0.500000,0.500000),scale(0.996154,1.000000),translate(-0.500000,-0.500000)" id="radialGradient-5">
+            <stop stop-color="#00AEEF" offset="0%"></stop>
+            <stop stop-color="#00A5E7" offset="10.56%"></stop>
+            <stop stop-color="#0092D7" offset="31.26%"></stop>
+            <stop stop-color="#0079C1" offset="54.08%"></stop>
+            <stop stop-color="#0076C0" offset="60.97%"></stop>
+            <stop stop-color="#0070BA" offset="69.02%"></stop>
+            <stop stop-color="#0066B2" offset="77.66%"></stop>
+            <stop stop-color="#0056A7" offset="86.71%"></stop>
+            <stop stop-color="#21409A" offset="95.98%"></stop>
+            <stop stop-color="#2D3494" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="50%" y1="-39.3708333%" x2="50%" y2="148.197917%" id="linearGradient-6">
+            <stop stop-color="#BCBEC0" offset="0%"></stop>
+            <stop stop-color="#58595B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="4.65412844%" x2="50%" y2="92.3766055%" id="linearGradient-7">
+            <stop stop-color="#BCBEC0" offset="0%"></stop>
+            <stop stop-color="#58595B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="gn.org---Dashboard---Your-Feed-more-days" transform="translate(-812.000000, -1490.000000)">
+            <g id="content-copy-2" transform="translate(461.000000, 1287.000000)">
+                <g id="Group-Copy">
+                    <g id="Card-1">
+                        <g id="Group-10" transform="translate(0.000000, 70.000000)">
+                            <g id="Group-6" transform="translate(300.000000, 87.000000)">
+                                <g id="Sponsor---$500" transform="translate(49.000000, 46.000000)">
+                                    <rect id="Rectangle" x="0" y="0" width="70" height="70"></rect>
+                                    <g id="Group-3" transform="translate(2.000000, 0.000000)">
+                                        <ellipse id="XMLID_1178_" fill="#1D232F" fill-rule="nonzero" cx="32.2638768" cy="32.5913978" rx="21.6855565" ry="21.6021505"></ellipse>
+                                        <g id="XMLID_2928_" transform="translate(0.000000, 4.516129)">
+                                            <g id="XMLID_408_" transform="translate(0.000000, 33.870968)" fill-rule="nonzero">
+                                                <path d="M29.317059,23.8602151 C16.0941587,22.5806452 5.36471956,12.7956989 2.79569892,0.0752688172 L0.151118861,0.0752688172 C2.79569892,14.2258065 14.7340889,25.2150538 29.3926184,26.4946237 L29.3926184,23.8602151 L29.317059,23.8602151 Z" id="XMLID_573_" fill="url(#linearGradient-1)"></path>
+                                                <g id="Group" fill="#E6E7E8">
+                                                    <path d="M2.34234234,0.52688172 C4.98692241,13.2473118 15.7163615,23.0322581 28.8637024,24.311828 L29.317059,24.311828 L29.317059,23.9354839 C16.0941587,22.655914 5.36471956,12.8709677 2.79569892,0.150537634 L2.26678291,0.150537634 L2.34234234,0.52688172 Z" id="Shape"></path>
+                                                    <path d="M29.0903807,26.4946237 C29.1659401,26.4946237 29.317059,26.4946237 29.3926184,26.4946237 L29.3926184,25.7419355 L29.0903807,26.4946237 Z" id="Shape"></path>
+                                                    <path d="M0.226678291,0.150537634 C0.151118861,0.150537634 0.151118861,0.150537634 0.226678291,0.150537634 Z" id="Shape"></path>
+                                                </g>
+                                                <path d="M61.7320546,0.150537634 C59.0874746,12.8709677 48.3580355,22.655914 35.2106946,23.9354839 L35.2106946,26.5698925 C49.8692241,25.2903226 61.7320546,14.3763441 64.4521941,0.150537634 L61.7320546,0.150537634 Z" id="XMLID_576_" fill="url(#linearGradient-2)"></path>
+                                                <path d="M35.6640511,24.2365591 C48.8869515,22.9569892 59.6163906,13.172043 62.1854112,0.451612903 L62.2609706,0.0752688172 L61.6564952,0.0752688172 C59.0119151,12.7956989 48.282476,22.5806452 35.1351351,23.8602151 L35.1351351,24.2365591 L35.6640511,24.2365591 Z" id="Shape" fill="#E6E7E8"></path>
+                                            </g>
+                                            <path d="M32.2638768,0 C16.7741935,0 4.2313281,12.4946237 4.2313281,27.9247312 C4.2313281,43.3548387 16.7741935,55.8494624 32.2638768,55.8494624 C47.75356,55.8494624 60.2964255,43.3548387 60.2964255,27.9247312 C60.2964255,12.4946237 47.75356,0 32.2638768,0 Z M32.2638768,49.6021505 C20.2499273,49.6021505 10.5783203,39.8924731 10.5783203,28 C10.5783203,16.1075269 20.3254868,6.39784946 32.2638768,6.39784946 C44.2022668,6.39784946 53.9494333,16.1075269 53.9494333,28 C53.9494333,39.8924731 44.2778262,49.6021505 32.2638768,49.6021505 Z" id="XMLID_654_" stroke="#808285" stroke-width="0.2401" fill="url(#linearGradient-3)" fill-rule="nonzero"></path>
+                                            <path d="M32.2638768,2.6344086 C18.2098227,2.6344086 6.80034874,14 6.80034874,28 C6.80034874,42 18.2098227,53.3655914 32.2638768,53.3655914 C46.3179308,53.3655914 57.7274048,42 57.7274048,28 C57.6518454,13.9247312 46.3179308,2.6344086 32.2638768,2.6344086 Z M32.2638768,49.6021505 C20.2499273,49.6021505 10.5783203,39.8924731 10.5783203,28 C10.5783203,16.1075269 20.3254868,6.39784946 32.2638768,6.39784946 C44.2022668,6.39784946 53.9494333,16.1075269 53.9494333,28 C53.9494333,39.8924731 44.2778262,49.6021505 32.2638768,49.6021505 Z" id="XMLID_651_" stroke="#808285" stroke-width="0.2401" fill="url(#linearGradient-4)" fill-rule="nonzero"></path>
+                                            <ellipse id="XMLID_650_" fill="url(#radialGradient-5)" fill-rule="nonzero" cx="32.2638768" cy="27.9247312" rx="20.6277245" ry="20.5483871"></ellipse>
+                                            <g id="XMLID_2328_" transform="translate(18.889858, 15.053763)">
+                                                <g id="XMLID_2345_">
+                                                    <image id="Bitmap" x="0.634925894" y="0.469225806" width="25.5383319" height="24.7431183" xlink:href="data:image/png;base64,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"></image>
+                                                    <g id="Group" transform="translate(0.755594, 0.752688)" fill="#00AEEF" fill-rule="nonzero">
+                                                        <polygon id="XMLID_376_" points="9.67160709 9.40860215 0.302237722 9.40860215 12.6184249 13.3225806"></polygon>
+                                                        <polygon id="XMLID_373_" points="12.6184249 18.2903226 20.1743679 23.7849462 12.6184249 13.3225806"></polygon>
+                                                        <polygon id="XMLID_372_" points="12.6184249 13.3225806 7.93374019 14.9032258 4.98692241 23.7849462"></polygon>
+                                                        <polygon id="XMLID_371_" points="12.6184249 0.451612903 12.6184249 13.3225806 15.4896832 9.40860215"></polygon>
+                                                        <g id="XMLID_365_">
+                                                            <polygon id="XMLID_370_" points="12.6184249 13.3225806 12.6184249 13.3225806 20.1743679 23.7849462 17.3031096 14.9032258"></polygon>
+                                                            <polygon id="XMLID_369_" points="4.98692241 23.7849462 12.6184249 18.2903226 12.6184249 13.3225806"></polygon>
+                                                            <polygon id="XMLID_368_" points="24.8590526 9.40860215 15.4896832 9.40860215 12.6184249 13.3225806"></polygon>
+                                                            <polygon id="XMLID_367_" points="9.67160709 9.40860215 12.6184249 13.3225806 12.6184249 0.451612903"></polygon>
+                                                            <polygon id="XMLID_366_" points="12.6184249 13.3225806 0.302237722 9.40860215 7.93374019 14.9032258"></polygon>
+                                                        </g>
+                                                        <polygon id="XMLID_364_" points="12.6184249 13.3225806 17.3031096 14.9032258 24.8590526 9.40860215"></polygon>
+                                                    </g>
+                                                </g>
+                                                <g id="XMLID_2329_" transform="translate(0.755594, 0.752688)" fill-rule="nonzero">
+                                                    <polygon id="XMLID_2344_" fill="#6DCFF6" points="9.67160709 9.40860215 0.302237722 9.40860215 12.6184249 13.3225806"></polygon>
+                                                    <polygon id="XMLID_2341_" fill="#6DCFF6" points="12.6184249 18.2903226 20.1743679 23.7849462 12.6184249 13.3225806"></polygon>
+                                                    <polygon id="XMLID_2340_" fill="#6DCFF6" points="12.6184249 13.3225806 7.93374019 14.9032258 4.98692241 23.7849462"></polygon>
+                                                    <polygon id="XMLID_2339_" fill="#6DCFF6" points="12.6184249 0.451612903 12.6184249 13.3225806 15.4896832 9.40860215"></polygon>
+                                                    <g id="XMLID_2333_" fill="#8ED8F8">
+                                                        <polygon id="XMLID_2338_" points="12.6184249 13.3225806 12.6184249 13.3225806 20.1743679 23.7849462 17.3031096 14.9032258"></polygon>
+                                                        <polygon id="XMLID_2337_" points="4.98692241 23.7849462 12.6184249 18.2903226 12.6184249 13.3225806"></polygon>
+                                                        <polygon id="XMLID_2336_" points="24.8590526 9.40860215 15.4896832 9.40860215 12.6184249 13.3225806"></polygon>
+                                                        <polygon id="XMLID_2335_" points="9.67160709 9.40860215 12.6184249 13.3225806 12.6184249 0.451612903"></polygon>
+                                                        <polygon id="XMLID_2334_" points="12.6184249 13.3225806 0.302237722 9.40860215 7.93374019 14.9032258"></polygon>
+                                                    </g>
+                                                    <polygon id="XMLID_2332_" fill="#6DCFF6" points="12.6184249 13.3225806 17.3031096 14.9032258 24.8590526 9.40860215"></polygon>
+                                                </g>
+                                            </g>
+                                        </g>
+                                        <path d="M11.5605929,10.8387097 C16.9253124,5.72043011 24.2545772,2.6344086 32.2638768,2.6344086 C40.2731764,2.6344086 47.5268817,5.72043011 52.9671607,10.8387097 L56.6695728,10.8387097 C50.6248184,4.13978495 41.9354839,0 32.2638768,0 C22.5922697,0 13.9029352,4.21505376 7.93374019,10.8387097 L11.5605929,10.8387097 Z" id="Shape" fill="url(#linearGradient-6)" fill-rule="nonzero"></path>
+                                        <path d="M32.2638768,0.602150538 C41.6332461,0.602150538 50.0203429,4.51612903 55.9895379,10.7634409 L56.5940134,10.7634409 C50.6248184,4.13978495 41.9354839,0 32.2638768,0 C22.5922697,0 13.9029352,4.21505376 7.93374019,10.8387097 L8.53821563,10.8387097 C14.4318512,4.51612903 22.8945074,0.602150538 32.2638768,0.602150538 Z" id="Shape" fill="#E6E7E8" fill-rule="nonzero"></path>
+                                        <g id="Group" transform="translate(23.423423, 52.688172)" fill-rule="nonzero">
+                                            <ellipse id="XMLID_413_" fill="url(#linearGradient-7)" cx="8.84045336" cy="8.50537634" rx="8.23597791" ry="8.20430108"></ellipse>
+                                            <ellipse id="XMLID_412_" fill="#808285" cx="8.84045336" cy="8.50537634" rx="7.02702703" ry="7"></ellipse>
+                                            <path d="M9.67160709,4.59139785 C8.91601279,7.15053763 8.76489393,7.52688172 8.38709677,7.4516129 C7.48038361,7.30107527 9.59604766,3.31182796 8.4626562,3.16129032 C7.55594304,3.08602151 7.55594304,4.59139785 7.02702703,6.32258065 C6.87590817,6.84946237 6.57367044,7.97849462 6.19587329,7.90322581 C5.59139785,7.82795699 6.04475443,6.77419355 6.12031386,6.09677419 C6.27143272,5.2688172 5.59139785,4.8172043 5.2136007,5.94623656 C4.98692241,6.5483871 4.98692241,6.5483871 4.91136298,7.22580645 C4.83580355,7.97849462 4.76024412,8.65591398 4.60912525,9.40860215 C4.2313281,10.9139785 4.38244696,13.3978495 7.10258646,13.7741935 C8.53821563,14 9.74716652,13.0967742 10.5027608,12.2688172 C10.880558,11.7419355 11.2583551,11.2150538 11.6361523,10.9139785 C12.7695437,10.1612903 13.7518163,10.3870968 13.9029352,9.86021505 C14.2051729,8.88172043 11.3339146,9.40860215 10.7294391,9.55913978 C10.351642,9.6344086 9.29380994,9.78494624 9.14269108,10.2365591 C8.99157222,10.688172 9.52048823,10.6129032 9.74716652,10.8387097 C9.97384481,11.1397849 9.67160709,11.516129 9.36936937,11.8172043 C8.99157222,12.1935484 8.38709677,12.4946237 7.40482418,12.344086 C5.36471956,12.0430108 5.59139785,9.93548387 6.87590817,9.25806452 C9.14269108,8.05376344 11.1827957,9.33333333 11.93839,7.67741935 C12.6939843,6.09677419 13.6762569,4.21505376 12.9206626,4.06451613 C12.0895089,3.91397849 11.8628306,5.04301075 11.409474,6.24731183 C10.9561174,7.30107527 10.880558,7.37634409 10.5783203,7.37634409 C9.97384481,7.30107527 12.0895089,2.86021505 11.1072363,2.78494624 C11.0316768,2.78494624 11.0316768,2.78494624 10.9561174,2.78494624 C9.97384481,2.70967742 9.82272595,3.98924731 9.67160709,4.59139785" id="XMLID_410_" fill="#A7A9AC"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

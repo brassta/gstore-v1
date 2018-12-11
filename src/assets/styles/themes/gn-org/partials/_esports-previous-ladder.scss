@@ -1,0 +1,127 @@
+///
+/// Previous Ladder tab
+///
+
+
+.#{$namespace}-previous-ladder {
+  height: 100%;
+  overflow-y: scroll;
+
+  .#{$namespace}-card {
+    margin: 0;
+    border-radius: 0;
+
+    &__content {
+      box-shadow: none;
+    }
+
+    &:first-of-type {
+      @include set-radius(map-get($card-border, radius), top);
+    }
+
+    &:last-of-type {
+      @include set-radius(map-get($card-border, radius), bottom);
+
+      margin-bottom: rhythm(1);
+    }
+
+    &__action {
+      display: none;
+    }
+  }
+
+  .#{$namespace}-card + .#{$namespace}-card {
+    @include set-radius(0, top);
+
+    @include set-border((
+      side: top,
+      width: 1px,
+      style: solid,
+      color: color('white', 'alpha', 10)
+    ));
+  }
+}
+
+
+@include responsive('small', 'medium') {
+  .#{$namespace}-previous-ladder {
+    .#{$namespace}-competition-cards {
+      width: 100%;
+      margin: 0;
+      padding: 0 rhythm(1);
+    }
+  }
+}
+
+
+@include responsive('small') {
+  .#{$namespace}-previous-ladder {
+
+    .#{$namespace}-card {
+      width: 100%;
+      height: rhythm(5.5);
+      padding: rhythm(.75);
+
+
+      &__cover {
+        width: 120px;
+        height: rhythm(4);
+      }
+
+
+      &__content {
+        flex: 1 1 auto;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin-left: rhythm(.75);
+        overflow: hidden;
+      }
+
+
+      &__header {
+        max-width: unset;
+      }
+
+        &__status {
+          top: 0;
+          right: 0;
+        }
+
+
+      &__details {
+        flex: 0 0 auto;
+      }
+
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &:nth-child(1) {
+          order: 2;
+        }
+
+        &:nth-child(2) {
+          order: 1;
+        }
+      }
+
+        &__title {
+          margin: rhythm(1) 0 0 0;
+          font-size: map-get($font-sizes, 'normal');
+        }
+
+        &__label {
+          display: block;
+        }
+
+        &__value {
+          font-size: map-get($font-sizes, 'normal');
+        }
+    }
+  }
+}
+
+

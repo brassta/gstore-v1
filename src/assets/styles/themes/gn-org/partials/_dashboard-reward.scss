@@ -1,0 +1,18 @@
+$reward-color: color('gray');
+$reward-image-height: rhythm(11.5);
+$reward-amount-margin: 0 0 rhythm(1) 0;
+
+
+.#{$namespace}-reward {
+  color: $reward-color;
+  text-align: center;
+
+  &__image {
+    height: $reward-image-height;
+    text-align: center;
+  }
+
+  &__amount {
+    margin: $reward-amount-margin;
+  }
+}

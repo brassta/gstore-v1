@@ -1,0 +1,12 @@
+///
+/// components/circular-progress.scss
+///
+$circular-margin: 0 12px 0 0;
+$circular-color: map-get($background-colors, 'primary');
+$circular-stroke: color('white', 'alpha', 10);
+
+$circular-text-size: map-get($font-sizes, 'tiny');
+$circular-large-text-size: map-get($font-sizes, 'normal');
+
+$circular-message-margin: 0 0 0 1ex;
+$circular-message-size: map-get($font-sizes, 'normal');

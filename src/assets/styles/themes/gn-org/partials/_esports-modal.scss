@@ -1,0 +1,93 @@
+///
+/// GameFinished Modal
+///
+
+
+.#{$namespace}-game-finished {
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: rhythm(7.5) rhythm(1.5) 0;
+
+    &__goblet {
+      @include set-background($game-finished-stars-background);
+
+      position: absolute;
+      top: rhythm(-3);
+      width: 100%;
+      height: rhythm(15);
+
+      &--trophy {
+        @include set-background($game-finished-trophy-background);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__rank {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 64px;
+        font-weight: bold;
+        color: color('gold');
+      }
+    }
+
+    &__header {
+      margin: rhythm(0.5) 0;
+      z-index: 1;
+    }
+
+    &__message {
+      font-size: map-get($font-sizes, 'large');
+      font-weight: normal;
+      text-align: center;
+      white-space: pre-wrap;
+      color: map-get($text-colors, alt);
+      z-index: 1;
+
+      &__inputField {
+        margin: rhythm(0.3) 0;
+        color: map-get($text-colors, alt);
+        font-size: map-get($font-sizes, 'normal');
+      }
+    }
+
+    &__amount {
+      //font-size: map-get($font-sizes, 'h3');
+      font-weight: bold;
+      color: color('gold');
+      line-height: rhythm(1.4);
+    }
+
+    &__rank {
+      //font-size: map-get($font-sizes, 'h3');
+      font-weight: bold;
+      color: color('gold');
+      //line-height: rhythm(1.2);
+    }
+  }
+
+  &__footer {
+    background-color: rgba(255,255,255,0.03);
+    box-shadow: 0 rhythm(-0.02) 0 0 map-get($background-colors, 'window'),;
+    * {
+      margin: rhythm(0.3);
+      font-weight: bold;
+    }
+  }
+}
+
+

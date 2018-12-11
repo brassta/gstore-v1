@@ -1,0 +1,22 @@
+$app-background: (
+  color: transparent,
+  image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900"><defs><linearGradient id="a" x1="2.473%" x2="97.527%" y1="35.814%" y2="63.07%"><stop offset="0%" stop-color="#272543"/><stop offset="100%" stop-color="#111020"/></linearGradient></defs><path fill="url(#a)" fill-rule="evenodd" d="M1440 115.792c-221.951 245.843-514.418-77.122-976.675 18.261-263.738 53.87-408.608 430.954-64.48 582.099 165.01 72.992 291.222 44.435 375.546 2.75 72.404-35.055 146.594-84.11 122.88-148.96-20.64-56.153-130.468-65.319-75.053-142.085 51.582-71.167 235.78-41.792 315.18-39.118 48.65 1.297 179.581 11.55 302.602 36.156v219.993c-62.982 1.336-135.957 8.165-217.647 33.9-89.301 27.976-183.541 108.122-273.794 178.247l-1.03-.295c-23.249 14.92-48.007 29.49-74.058 43.26H177.849C96.114 849.5 38.571 789.392 0 723.873v-566.84A1089.987 1089.987 0 0 1 54.252 42.43 2254.488 2254.488 0 0 0 76.468 0H1440v115.792z"/></svg>'),
+  repeat: no-repeat,
+  size: cover,
+);
+
+
+.#{$namespace}-app {
+  @include set-background($app-background);
+
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  > .#{$namespace}-loader {
+    flex: 1 1 auto;
+  }
+}

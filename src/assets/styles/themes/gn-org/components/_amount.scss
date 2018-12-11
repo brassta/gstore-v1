@@ -1,0 +1,79 @@
+$amount-color: #D3B747;
+$amount-font-size: map-get($font-sizes, 'normal');
+$amount-small-font-size: map-get($font-sizes, 'small');
+$amount-medium-font-size: map-get($font-sizes, 'normal');
+$amount-large-font-size: map-get($font-sizes, 'large');
+$amount-huge-font-size: map-get($font-sizes, 'h2');
+
+
+.#{$namespace}-amount {
+  display: inline-flex;
+  align-items: center;
+  font-size: $amount-font-size;
+  color: $amount-color;
+
+
+  &__icon {
+
+  }
+
+  & &__value {
+    color: inherit;
+  }
+
+  &--golden {
+    color: color('gold');
+  }
+
+  &--left {
+    .#{$namespace}-amount__sign,
+    .#{$namespace}-amount__icon {
+      order: 1;
+      margin-right: 1ex;
+    }
+
+    .#{$namespace}-amount__value {
+      order: 2;
+    }
+  }
+
+  &--right {
+    .#{$namespace}-amount__value {
+      order: 1;
+    }
+
+    .#{$namespace}-amount__sign,
+    .#{$namespace}-amount__icon {
+      order: 2;
+      margin-left: rhythm(0.2);
+    }
+  }
+
+
+  &--small {
+    .#{$namespace}-amount__value {
+      font-size: $amount-small-font-size;
+    }
+  }
+
+
+  &--medium {
+    .#{$namespace}-amount__value {
+      font-size: $amount-medium-font-size;
+    }
+  }
+
+
+  &--large {
+    .#{$namespace}-amount__value {
+      font-size: $amount-large-font-size;
+    }
+  }
+
+
+  &--huge {
+    .#{$namespace}-amount__value {
+      font-size: $amount-huge-font-size;
+    }
+  }
+}

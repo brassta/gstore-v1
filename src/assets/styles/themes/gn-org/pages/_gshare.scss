@@ -1,0 +1,93 @@
+$gshare-width: 740px;
+$gshare-padding: rhythm(2) rhythm(1);
+$gshare-text-size: map-get($font-sizes, 'large');
+$gshare-text-color: #7CAAB8;  //map-get($text-colors, 'alt');
+$gshare-image-padding: rhythm(1);
+$gshare-section-margin: 0 0 rhythm(1) 0;
+$gshare-background: (
+  image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="900" viewBox="0 0 1440 900"><defs><linearGradient id="b" x1="50%" x2="50%" y1="98.885%" y2="0%"><stop offset="0%" stop-color="#272543"/><stop offset="100%" stop-color="#111020"/></linearGradient><path id="a" d="M0 0h1440v900H0z"/><linearGradient id="c" x1="2.473%" x2="97.527%" y1="35.814%" y2="63.07%"><stop offset="0%" stop-color="#272543"/><stop offset="100%" stop-color="#111020"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><use fill="url(#b)" xlink:href="#a"/><path fill="url(#c)" d="M1440 115.792c-221.951 245.843-514.418-77.122-976.675 18.261-263.738 53.87-408.608 430.954-64.48 582.099 165.01 72.992 291.222 44.435 375.546 2.75 72.404-35.055 146.594-84.11 122.88-148.96-20.64-56.153-130.468-65.319-75.053-142.085 51.582-71.167 235.78-41.792 315.18-39.118 48.65 1.297 179.581 11.55 302.602 36.156v219.993c-62.982 1.336-135.957 8.165-217.647 33.9-89.301 27.976-183.541 108.122-273.794 178.247l-1.03-.295c-23.249 14.92-48.007 29.49-74.058 43.26H177.849C96.114 849.5 38.571 789.392 0 723.873v-566.84A1089.987 1089.987 0 0 1 54.252 42.43 2254.488 2254.488 0 0 0 76.468 0H1440v115.792z"/></g></svg>'),
+  size: cover,
+);
+
+
+.#{$namespace}-gshare {
+  @include set-background($gshare-background);
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-y: auto;
+
+
+  &-content {
+    width: $gshare-width;
+    height: 100%;
+    margin: auto;
+    padding: $gshare-padding;
+  }
+
+
+  &-section {
+    margin: $gshare-section-margin;
+  }
+
+    &__logo {
+      //margin: $gshare-section-margin;
+    }
+
+    &__title {
+      margin: $gshare-section-margin;
+      font-weight: bold;
+    }
+
+    &__text {
+      font-size: $gshare-text-size;
+      color: $gshare-text-color;
+    }
+
+    &__image {
+      padding: $gshare-image-padding;
+
+      img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: rhythm(20);
+        margin: $gshare-section-margin;
+      }
+    }
+
+
+  &-download {
+    .#{$namespace}-button--fixed {
+      width: 170px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+@include responsive('small') {
+  .#{$namespace}-gshare {
+    &-content {
+      width: 100%;
+    }
+
+    &-download {
+      flex-direction: column;
+      width: 100%;
+
+      .#{$namespace}-button--fixed {
+        width: 100%;
+      }
+
+      &.#{$namespace}-button-group {
+        .#{$namespace}-button--fixed + .#{$namespace}-button--fixed {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

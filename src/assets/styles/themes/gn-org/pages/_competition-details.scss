@@ -1,0 +1,54 @@
+// TODO@djsimovic: move style values to variables for all of the below
+
+.#{$namespace}-competition-details {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .#{$namespace}-tabs__list {
+    width: 990px;
+    margin: rhythm(1) auto;
+  }
+
+  &__content {
+    overflow-y: scroll;
+    padding: rhythm(1.5) 0;
+  }
+}
+
+
+.#{$namespace}-competition-refresh {
+  margin: rhythm(.5) auto;
+  text-align: center;
+}
+
+
+@include responsive('medium', 'small') {
+  .#{$namespace}-competition-details {
+    overflow-y: auto;
+
+    &__content {
+      //height: 100%;
+      padding: 0;
+      overflow-y: unset;
+    }
+
+    .#{$namespace}-tabs {
+      //height: 100%;
+      &__list {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+@import '../partials/competition-header';
+@import '../partials/featured-card';
+@import '../partials/competition-participants';
+@import '../partials/competition-ranking';
+@import '../partials/competition-info';
+@import '../partials/competition-game-frame';
+@import '../partials/competition-empty-match';

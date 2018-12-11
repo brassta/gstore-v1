@@ -1,0 +1,12 @@
+$task-title-margin: rhythm(.5) 0;
+$task-title-text-transform: uppercase;
+$task-title-color: color('gray');
+
+
+.#{$namespace}-task {
+  &__title {
+    margin: $task-title-margin;
+    text-transform: $task-title-text-transform;
+    color: $task-title-color;
+  }
+}

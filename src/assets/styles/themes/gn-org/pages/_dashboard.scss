@@ -1,0 +1,14 @@
+.#{$namespace}-dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+
+@import '../partials/dashboard-feed.scss';
+@import '../partials/dashboard-card.scss';
+@import '../partials/dashboard-reward.scss';
+@import '../partials/dashboard-task.scss';
+@import '../partials/dashboard-ad.scss';

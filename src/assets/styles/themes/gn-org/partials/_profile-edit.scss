@@ -1,0 +1,15 @@
+.#{$namespace}-edit-profile {
+  &__social-title {
+    text-align: left;
+    color: map-get($text-colors, 'dark');
+  }
+
+  &__social-profile {
+    @each $key, $value in $social-profiles-icons {
+      &--#{$key} {
+        color: color('white');
+        background-color: map-get($social-profiles-colors, $key);
+      }
+    }
+  }
+}

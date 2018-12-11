@@ -1,0 +1,258 @@
+$stepper-background: map-get($background-colors, 'window') !default;
+
+$stepper-steps-margin: 0 !default;
+$stepper-steps-padding: rhythm(1.5) rhythm(1) rhythm(1) rhythm(1) !default;
+$stepper-steps-background: color('secondary', 'alpha', 30) !default;
+
+$stepper-step-margin: 0 !default;
+$stepper-step-padding: rhythm(1) 0 0 0 !default;
+$stepper-step-counter-size: rhythm(1.5) !default;
+$stepper-step-joint-height: 2px !default;
+
+$stepper-done-joint-background: map-get($border-colors, 'success') !default;
+$stepper-previous-step-content: '' !default;
+$stepper-previous-step-color: map-get($text-colors, 'dark') !default;
+$stepper-previous-step-counter-color: map-get($text-colors, 'inverse') !default;
+$stepper-previous-step-counter-background: (
+  color: map-get($background-colors, 'success'),
+  image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>'),
+  repeat: no-repeat,
+  position: center center,
+  size: 16px,
+) !default;
+
+$stepper-active-joint-background: linear-gradient(270deg, #005EBD 0%, #22D682 100%) !default;
+$stepper-active-step-content: counter(step-counter) !default;
+$stepper-active-step-color: map-get($text-colors, 'hover') !default;
+$stepper-active-step-counter-color: map-get($text-colors, 'inverse') !default;
+$stepper-active-step-counter-background: map-get($background-colors, 'hover') !default;
+
+$stepper-inactive-joint-background: map-get($border-colors, 'normal') !default;
+$stepper-next-step-content: counter(step-counter) !default;
+$stepper-next-step-color: map-get($text-colors, 'dark') !default;
+$stepper-next-step-counter-color: map-get($text-colors, 'hover') !default;
+$stepper-next-step-counter-background: map-get($background-colors, 'control') !default;
+
+$stepper-content-padding: rhythm(1) rhythm(1.5) !default;
+
+$stepper-indicator-margin: rhythm(1) !default;
+$stepper-indicator-padding: 0 !default;
+$stepper-indicator-step-margin: 0 rhythm(.75) !default;
+$stepper-indicator-step-padding: 0 !default;
+$stepper-indicator-step-size: rhythm(.75) !default;
+$stepper-indicator-background: map-get($background-colors, 'normal') !default;
+$stepper-indicator-previous-background: map-get($background-colors, 'hover') !default;
+$stepper-indicator-active-background: map-get($background-colors, 'hover') !default;
+$stepper-indicator-next-background: map-get($background-colors, 'normal') !default;
+
+$stepper-buttons-padding: rhythm(1) rhythm(1.5) !default;
+
+
+.#{$namespace}-stepper {
+  display: flex;
+  flex-direction: column;
+  background: $stepper-background;
+
+  &--compact {
+    margin: 0;
+    padding: 0;
+
+    .#{$namespace}-stepper__content {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+
+.#{$namespace}-stepper__steps {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin: $stepper-steps-margin;
+  padding: $stepper-steps-padding;
+  list-style: none;
+  counter-reset: step-counter;
+  background-color: $stepper-steps-background;
+
+  &--clickable {
+    .#{$namespace}-stepper__step::before {
+      cursor: pointer;
+    }
+  }
+
+  .#{$namespace}-stepper__step {
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    margin: $stepper-step-margin;
+    padding: $stepper-step-padding;
+
+    /* step circle */
+    &::before {
+      content: counter(step-counter);
+      counter-increment: step-counter;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      position: absolute;
+      top: -#{$stepper-step-counter-size / 2};
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: $stepper-step-counter-size;
+      height: $stepper-step-counter-size;
+      border-radius: 100%;
+      z-index: 2;
+    }
+
+    /* connecting line */
+    &::after {
+      content: ' ';
+      display: block;
+      width: 100%;
+      position: absolute;
+      background: $stepper-inactive-joint-background;
+      height: $stepper-step-joint-height;
+      left: -50%;
+      top: -$stepper-step-joint-height;
+      z-index: 1;
+    }
+
+    &:first-child::after {
+      display: none;
+    }
+  }
+
+  .#{$namespace}-stepper__step--previous {
+    color: $stepper-previous-step-color;
+
+    &::before {
+      @include set-background($stepper-previous-step-counter-background);
+
+      content: $stepper-previous-step-content;
+      color: $stepper-previous-step-counter-color;
+    }
+  }
+
+  .#{$namespace}-stepper__step--previous + .#{$namespace}-stepper__step--previous::after {
+    background: $stepper-done-joint-background;
+  }
+
+  .#{$namespace}-stepper__step--active {
+    color: $stepper-active-step-color;
+
+    &::before {
+      @include set-background($stepper-active-step-counter-background);
+
+      content: $stepper-active-step-content;
+      color: $stepper-active-step-counter-color;
+    }
+  }
+
+  .#{$namespace}-stepper__step--previous + .#{$namespace}-stepper__step--active::after {
+    background: $stepper-active-joint-background;
+  }
+
+  .#{$namespace}-stepper__step--next {
+    color: $stepper-next-step-color;
+
+    &::before {
+      @include set-background($stepper-next-step-counter-background);
+
+      content: $stepper-next-step-content;
+      color: $stepper-next-step-counter-color;
+    }
+  }
+}
+
+
+.#{$namespace}-stepper__content {
+  flex: 1 1 auto;
+  padding: $stepper-content-padding;
+}
+
+
+.#{$namespace}-stepper__footer {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+
+.#{$namespace}-stepper__indicator {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: $stepper-indicator-margin;
+  padding: $stepper-indicator-padding;
+  list-style: none;
+
+  &--clickable {
+    .#{$namespace}-stepper__step {
+      cursor: pointer;
+    }
+  }
+
+  .#{$namespace}-stepper__step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: $stepper-indicator-step-margin;
+    padding: $stepper-indicator-step-padding;
+    width: $stepper-indicator-step-size;
+    height: $stepper-indicator-step-size;
+    border-radius: 100%;
+    background: $stepper-indicator-background;
+
+    &--previous {
+      background: $stepper-indicator-previous-background;
+    }
+
+    &--active {
+      background: $stepper-indicator-active-background;
+    }
+
+    &--next {
+      background: $stepper-indicator-next-background;
+    }
+  }
+}
+
+
+.#{$namespace}-stepper__buttons {
+  display: flex;
+  padding: $stepper-buttons-padding;
+  //
+  //&--left {
+  //  justify-content: flex-start;
+  //}
+  //
+  //&--right {
+  //  justify-content: flex-end;
+  //
+  //  .#{$namespace}-stepper__button--next {
+  //    margin-left: auto;
+  //  }
+  //}
+  //
+  //&--center {
+  //  justify-content: center;
+  //}
+  //
+  //&--justify {
+  //  justify-content: space-between;
+  //
+  //  .#{$namespace}-stepper__button--next {
+  //    margin-left: auto;
+  //  }
+  //}
+}
+

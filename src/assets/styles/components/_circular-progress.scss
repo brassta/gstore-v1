@@ -1,0 +1,66 @@
+$circular-margin: 0 12px 0 0 !default;
+$circular-color: map-get($text-colors, 'success') !default;
+$circular-stroke: color('secondary', 'alpha', 50) !default;
+
+$circular-text-size: map-get($font-sizes, 'tiny') !default;
+$circular-large-text-size: map-get($font-sizes, 'normal') !default;
+
+$circular-message-margin: 0 0 0 1ex !default;
+$circular-message-size: map-get($font-sizes, 'normal') !default;
+
+
+.#{$namespace}-progress--circular {
+  margin: $circular-margin;
+
+  &__background,
+  &__progress {
+    fill: none;
+  }
+
+  &__background {
+    stroke: $circular-stroke;
+  }
+
+  &__progress {
+    stroke: $circular-color;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &__text {
+    font-size: $circular-text-size;
+    fill: $circular-color;
+  }
+
+  &__tick {
+    fill: $circular-color;
+  }
+
+  &__message {
+    margin: $circular-message-margin;
+    font-size: $circular-message-size;
+  }
+
+
+  &--small {
+    .#{$namespace}-progress--circular__text {
+      display: none;
+    }
+  }
+
+  &--medium {
+    .#{$namespace}-progress--circular__text {
+      font-size: $circular-text-size;
+    }
+  }
+
+  &--large {
+    .#{$namespace}-progress--circular__text {
+      font-size: $circular-large-text-size;
+    }
+
+    .#{$namespace}-progress--circular__message {
+      font-size: $circular-large-text-size;
+    }
+  }
+}

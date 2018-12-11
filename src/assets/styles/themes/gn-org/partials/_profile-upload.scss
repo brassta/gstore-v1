@@ -1,0 +1,65 @@
+.#{$namespace}-upload-image {
+  @include set-background($profile-image-background);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rhythm(21);
+
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__no-image {
+    margin: 0;
+    font-weight: bold;
+    color: map-get($text-colors, 'inverse');
+  }
+
+  &__invalid-message {
+    margin: 0 rhythm(1) 0 0;
+  }
+
+  &__image {
+    background-color: black;
+    //height: rhythm(20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > .ReactCrop {
+      > img {
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+}
+
+
+@include responsive('small') {
+  .#{$namespace}-modal--upload-image {
+    .#{$namespace}-modal {
+      &__header {
+        padding: rhythm(1);
+
+        .close {
+          top: rhythm(1);
+          right: rhythm(1);
+        }
+      }
+
+      &__body {
+        padding: 0;
+      }
+
+
+      &__footer {
+        margin: 0;
+      }
+    }
+  }
+}

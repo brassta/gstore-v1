@@ -1,19 +1,19 @@
-import { connect } from 'react-redux';
-import { compose, lifecycle } from 'recompose';
-import { injectIntl } from 'react-intl';
+import {connect} from 'react-redux';
+import {compose, lifecycle} from 'recompose';
+import {injectIntl} from 'react-intl';
 
-import { State } from 'src/state/state';
-import { getRewards } from 'src/state/selectors';
-import { fetchProducts } from 'src/state/actions';
+import {State} from 'src/state/state';
+// import {getAllProducts} from 'src/state/selectors';
+import {fetchProducts} from 'src/state/actions';
 
-import AllProducts, { Props } from './AllProducts';
+import AllProducts, {Props} from './AllProducts';
 
 const actions = {
     fetchProducts,
 };
 
 const mapStateToProps = (state: State) => ({
-    competitions: getRewards(state),
+    allProducts: fetchProducts,
 });
 
 export default compose<Props, {}>(
@@ -24,9 +24,14 @@ export default compose<Props, {}>(
     ),
     lifecycle<any, any>({
         componentDidMount() {
-            const { fetchProducts } = this.props;
 
-            fetchProducts();
+            // console.log('ene');
+
+            // const fetchProducts = this.props.allProducts;
+
+            // const products = fetchProducts();
+            // eslint-disable-next-line
+            // console.log('evo nas', products);
         },
     })
 )(AllProducts);

@@ -24,9 +24,9 @@ export const isGoldBalanceInProgress = ({ balance }: State) =>
 export const getGoldAccountId = ({ balance }: State) =>
   fromBalance.getGoldAccountId(balance);
 
-//gnstore
-export const getCurrentProductMap = ({product}:State) =>{
-    fromGnStore.GetCurrentProductMap(product);
+// gnstore
+export const getAllProducts = ({gnStore}:State) =>{
+    fromGnStore.getAllProducts(gnStore);
 }
 
 // competition

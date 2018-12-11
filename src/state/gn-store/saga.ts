@@ -1,5 +1,5 @@
 // import {all, put, takeLatest, takeEvery, select} from 'redux-saga/effects';
-import {put} from 'redux-saga/effects';
+import {all,put,takeLatest} from 'redux-saga/effects';
 // import {delay} from 'redux-saga';
 // @ts-ignore
 import jwtDecode from 'jwt-decode';
@@ -16,6 +16,7 @@ import {mapResponseToProduct} from 'src/utilities/mapper';
 
 import * as actions from './actionCreators';
 // import {ActionTypes, ActionMap} from './actions';
+import {ActionTypes} from './actions';
 
 function* fetchProducts() {
     try {
@@ -29,4 +30,10 @@ function* fetchProducts() {
     catch{
         yield put(actions.fetchCurrentProductsError());
     }
+}
+
+export default function*(){
+    yield all([
+        takeLatest(ActionTypes.FetchProducts,fetchProducts)
+    ])
 }

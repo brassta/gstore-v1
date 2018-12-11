@@ -1,20 +1,21 @@
 import * as React from 'react';
+import {Product} from "src/types";
 
 // import RewardCard from '@views/RewardCard';
 // import { Competition } from 'src/types';
 
 export interface Props {
-    a:string
-}
+    allProducts:Product[];
+};
 
 const baseClass = 'gc-all-products';
 
-const AllProducts: React.SFC<Props> = ({ }) => (
-    <div className={baseClass}>
-        ajde brancilo kuco
-        {/*<div className="gc-cards gc-competition-cards">ajde brancilo kuco*/}
-        {/*</div>*/}
-    </div>
-);
+const AllProducts: React.SFC<Props> = ({}) => {
+    return (
+        <div className={baseClass}>
+            ajde brancilo kuco
+        </div>
+    )
+};
 
 export default AllProducts;

@@ -2,6 +2,6 @@
 
 import { State } from './state';
 
-export const GetCurrentProductMap = (product:State)=>{
+export const getAllProducts = (product:State)=>{
     return product.allProducts
 }

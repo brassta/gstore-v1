@@ -13,5 +13,5 @@ export interface State {
   dashboard: DashboardState;
   profile: ProfileState;
   doGood: DoGoodState;
-  product: GNStoreState;
+  gnStore: GNStoreState;
 }
